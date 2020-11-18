@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './page/home/home.component';
 import { CargoModule } from './page/cargo/cargo.module';
 import { NavbarComponent } from './core/component/navbar.component';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { NavbarComponent } from './core/component/navbar.component';
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AppRoutingModule,
     CargoModule,
   ],
