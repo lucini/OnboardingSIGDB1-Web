@@ -3,23 +3,21 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './page/home/home.component';
 import { CargoModule } from './page/cargo/cargo.module';
-import { NavbarComponent } from './core/component/navbar.component';
 import { CommonModule } from '@angular/common';
+import { CoreModule } from './core/core.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    NavbarComponent,
   ],
   imports: [
     BrowserModule,
     CommonModule,
-    AppRoutingModule,
+    CoreModule,
     CargoModule,
   ],
   providers: [],
