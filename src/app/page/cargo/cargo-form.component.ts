@@ -1,5 +1,8 @@
 import { Component, OnInit } from "@angular/core";
+import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
+import { Cargo } from "../../shared/model/cargo";
+import { CargoService } from "./cargo.service";
 
 @Component({
     selector: 'app-cargo-form',
@@ -7,11 +10,28 @@ import { Router } from "@angular/router";
 })
 
 export class CargoFormComponent implements OnInit {
-    constructor(private router: Router) { }
+    formGroup: FormGroup;
 
-    ngOnInit() { }
+    constructor(private service: CargoService,
+        private fb: FormBuilder,
+        private router: Router) { }
+
+    ngOnInit() {
+        this.initForm();
+    }
+
+    initForm(): void {
+        this.formGroup = this.fb.group({
+            id: [''],
+            descricao: ['', Validators.required],
+        });
+    }
 
     voltar(): void {
         this.router.navigate(['/cargo']);
+    }
+
+    salvar(): void {
+       this.service.save(this.formGroup.value).subscribe(() => this.voltar());
     }
 }
