@@ -27,6 +27,11 @@ export class CargoFormComponent implements OnInit {
         });
     }
 
+    isValid(campo): boolean {
+        return this.formGroup.controls[campo].invalid &&
+          (this.formGroup.controls[campo].dirty || this.formGroup.controls[campo].touched);
+    }
+
     voltar(): void {
         this.router.navigate(['/cargo']);
     }

@@ -15,9 +15,9 @@ export class NavbarComponent implements OnInit {
     ngOnInit(): void {
 
         this.menuItens = [
-            { title: 'Empresas', routerLink: '/empresa' },
-            { title: 'Funcionários', routerLink: '/funcionario' },
-            { title: 'Cargos', routerLink: '/cargo' },
+            { title: 'Empresas', routerLink: '/empresa', icon: 'fa fa-building' },
+            { title: 'Funcionários', routerLink: '/funcionario', icon: 'fa fa-id-badge' },
+            { title: 'Cargos', routerLink: '/cargo', icon: 'fa fa-black-tie' },
         ];
     }
 }
