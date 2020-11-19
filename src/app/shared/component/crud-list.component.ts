@@ -11,4 +11,8 @@ export abstract class CrudListComponent<T> {
     }
 
     abstract novo(): void;
+    abstract editar(id: number): void;
+    remover(id: number): void {
+        this.service.deleteById(id).subscribe();
+    }
 }

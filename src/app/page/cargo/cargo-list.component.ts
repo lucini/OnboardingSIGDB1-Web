@@ -14,7 +14,7 @@ export class CargoListComponent extends CrudListComponent<Cargo> implements OnIn
     constructor(private cargoService: CargoService,
         private router: Router) {
         super(cargoService);
-     }
+    }
 
     ngOnInit(): void {
         this.loadList();
@@ -22,5 +22,9 @@ export class CargoListComponent extends CrudListComponent<Cargo> implements OnIn
 
     novo(): void {
         this.router.navigate(['/cargo/form']);
+    }
+
+    editar(id: number): void {
+        this.router.navigate(['/cargo/form', id]);
     }
 }

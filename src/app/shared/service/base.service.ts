@@ -1,6 +1,8 @@
 import { Observable } from "rxjs/Observable";
 import { of } from "rxjs/observable/of";
-
+/**
+ * Simulando comunicação com a API
+ */
 export abstract class BaseService<T> {
     private _lista: T[] = [];
 
@@ -23,7 +25,7 @@ export abstract class BaseService<T> {
             const index = this._lista.findIndex(v => v['id'] === id);
             this._lista[index] = model;
         } else {
-            const lastId = this._lista[this._lista.length - 1]['id'];
+            const lastId = this._lista.length > 0 ? this._lista[this._lista.length - 1]['id'] : 0;
             model['id'] = lastId + 1;
             this._lista.push(model);
         }
@@ -33,7 +35,7 @@ export abstract class BaseService<T> {
 
     deleteById(id: number): Observable<void> {
         const index = this._lista.findIndex(v => v['id'] === id);
-        this._lista = this._lista.splice(index, 1);
+        this._lista.splice(index, 1);
         return of();
     }
 }
