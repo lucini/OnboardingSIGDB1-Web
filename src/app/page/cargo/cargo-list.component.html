@@ -10,7 +10,7 @@
     </thead>
     <tbody>
       <tr *ngFor="let item of list">
-        <th scope="row">{{item?.id}}</th>
+        <td scope="row">{{item?.id}}</td>
         <td>{{item?.descricao}}</td>
         <td class="text-center">
           <button (click)="editar(item?.id)" type="button" class="btn btn-outline-primary rounded-pill">

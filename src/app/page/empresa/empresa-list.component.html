@@ -12,10 +12,10 @@
       </thead>
       <tbody>
         <tr *ngFor="let item of list">
-          <th scope="row">{{item?.id}}</th>
-          <th>{{item?.nome}}</th>
-          <th>{{item?.cnpj}}</th>
-          <th>{{item?.dataFundacao}}</th>
+          <td scope="row">{{item?.id}}</td>
+          <td>{{item?.nome}}</td>
+          <td>{{item?.cnpj}}</td>
+          <td>{{item?.dataFundacao}}</td>
           <td class="text-center">
             <button (click)="editar(item?.id)" type="button" class="btn btn-outline-primary rounded-pill">
               <i class="fa fa-edit mr-1"></i>Editar

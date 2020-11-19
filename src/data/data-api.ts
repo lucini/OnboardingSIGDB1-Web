@@ -12,4 +12,6 @@ export const cargos: Cargo[] = [
 
 export const empresas: Empresa[] = [
     {id: 1, nome: 'Mötorhead', cnpj:'', dataFundacao: ''},
+    {id: 2, nome: 'Megadeth', cnpj:'', dataFundacao: ''},
+    {id: 3, nome: 'Metallica', cnpj:'', dataFundacao: ''},
 ];
