@@ -13,8 +13,12 @@
         <th scope="row">{{item?.id}}</th>
         <td>{{item?.descricao}}</td>
         <td class="text-center">
-          <button (click)="editar(item?.id)" type="button" class="btn btn-outline-primary rounded-pill">Editar</button>
-          <button (click)="remover(item?.id)" type="button" class="btn btn-outline-danger rounded-pill">Excluir</button>
+          <button (click)="editar(item?.id)" type="button" class="btn btn-outline-primary rounded-pill">
+            <i class="fa fa-edit mr-1"></i>Editar
+          </button>
+          <button (click)="remover(item?.id)" type="button" class="btn btn-outline-danger rounded-pill">
+            <i class="fa fa-trash mr-1"></i>Excluir
+          </button>
         </td>
       </tr>
     </tbody>

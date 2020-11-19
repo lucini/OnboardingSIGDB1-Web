@@ -2,17 +2,17 @@ import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { CrudFormComponent } from "../../shared/component/crud-form.component";
-import { Cargo } from "../../shared/model/cargo";
-import { CargoService } from "./cargo.service";
+import { Empresa } from "../../shared/model/empresa";
+import { EmpresaService } from "./empresa.service";
 
 @Component({
-    selector: 'app-cargo-form',
-    templateUrl: 'cargo-form.component.html'
+    selector: 'app-empresa-form',
+    templateUrl: 'empresa-form.component.html'
 })
 
-export class CargoFormComponent extends CrudFormComponent<Cargo> implements OnInit {
+export class EmpresaFormComponent extends CrudFormComponent<Empresa> implements OnInit {
 
-    constructor(private service: CargoService,
+    constructor(private service: EmpresaService,
         private fb: FormBuilder,
         private router: Router,
         private activatedRoute: ActivatedRoute) {
@@ -35,12 +35,14 @@ export class CargoFormComponent extends CrudFormComponent<Cargo> implements OnIn
     initForm(): void {
         this.formGroup = this.fb.group({
             id: [''],
-            descricao: ['', Validators.required],
+            nome: ['', Validators.required],
+            cnpj: ['', Validators.required],
+            dataFundacao: ['', Validators.required],
         });
     }
 
     voltar(): void {
-        this.router.navigate(['/cargo']);
+        this.router.navigate(['/empresa']);
     }
 
     salvar(): void {

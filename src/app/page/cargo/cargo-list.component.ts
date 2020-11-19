@@ -9,15 +9,11 @@ import { CargoService } from "./cargo.service";
     templateUrl: 'cargo-list.component.html',
 })
 
-export class CargoListComponent extends CrudListComponent<Cargo> implements OnInit {
+export class CargoListComponent extends CrudListComponent<Cargo>  {
 
-    constructor(private cargoService: CargoService,
+    constructor(protected service: CargoService,
         private router: Router) {
-        super(cargoService);
-    }
-
-    ngOnInit(): void {
-        this.loadList();
+        super(service);
     }
 
     novo(): void {

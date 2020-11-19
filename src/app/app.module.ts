@@ -7,6 +7,7 @@ import { HomeComponent } from './page/home/home.component';
 import { CargoModule } from './page/cargo/cargo.module';
 import { CommonModule } from '@angular/common';
 import { CoreModule } from './core/core.module';
+import { EmpresaModule } from './page/empresa/empresa.module';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { CoreModule } from './core/core.module';
     BrowserModule,
     CommonModule,
     CoreModule,
+    EmpresaModule,
     CargoModule,
   ],
   providers: [],
