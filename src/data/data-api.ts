@@ -18,5 +18,5 @@ export const empresas: Empresa[] = [
 ];
 
 export const funcionarios: Funcionario[] = [
-    {id: 1, nome: 'Lemmy Kilmister', cpf: '32540181090'},
+    {id: 1, nome: 'Lemmy Kilmister', cpf: '32540181090', empresas: empresas},
 ];

@@ -4,6 +4,7 @@ import { CardComponent } from './component/card.component';
 import { FormFeedbackComponent } from './component/form-feedback.component';
 import { CnpjPipe } from './pipe/cnpj.pipe';
 import { CpfPipe } from './pipe/cpf.pipe';
+import { ExplodePipe } from './pipe/explode.pipe';
 
 
 @NgModule({
@@ -13,12 +14,14 @@ import { CpfPipe } from './pipe/cpf.pipe';
         FormFeedbackComponent,
         CpfPipe,
         CnpjPipe,
+        ExplodePipe,
     ],
     declarations: [
         CardComponent,
         FormFeedbackComponent,
         CpfPipe,
         CnpjPipe,
+        ExplodePipe,
     ],
     providers: [],
 })
