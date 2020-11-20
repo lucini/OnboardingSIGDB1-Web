@@ -6,6 +6,6 @@ export interface Funcionario {
     nome: string;
     cpf: string;
     dataContratacao?: string;
-    empresa?: Empresa;
+    empresas?: Empresa[];
     cargo?: Cargo;
 }

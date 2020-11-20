@@ -15,7 +15,7 @@
             <tr *ngFor="let item of list">
                 <td scope="row">{{item?.id}}</td>
                 <td>{{item?.nome}}</td>
-                <td>{{item?.cpf}}</td>
+                <td>{{item?.cpf | cpf}}</td>
                 <td>empresas</td>
                 <td>{{item?.cargo?.descricao}}</td>
                 <td class="text-center">

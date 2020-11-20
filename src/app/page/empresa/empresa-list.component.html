@@ -17,7 +17,7 @@
             <tr *ngFor="let item of list">
                 <td scope="row">{{item?.id}}</td>
                 <td>{{item?.nome}}</td>
-                <td>{{item?.cnpj}}</td>
+                <td>{{item?.cnpj | cnpj}}</td>
                 <td>{{item?.dataFundacao}}</td>
                 <td class="text-center">
                     <button (click)="editar(item?.id)" type="button" class="btn btn-outline-primary rounded-pill grow">
