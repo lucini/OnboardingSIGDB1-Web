@@ -1,12 +1,13 @@
-<app-card title="Empresas" subTitle="Listagem">
+<app-card title="Funcionários" subTitle="Listagem">
     <div class="actions mb-2"><button type="button" (click)="novo()" class="btn btn-primary grow">Novo</button></div>
     <table class="table">
         <thead>
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Nome</th>
-                <th scope="col">C.N.P.J</th>
-                <th scope="col">Data Fundação</th>
+                <th scope="col">C.P.F</th>
+                <th scope="col">Empresas</th>
+                <th scope="col">Cargo</th>
                 <th class="text-center" scope="col">Ações</th>
             </tr>
         </thead>
@@ -14,8 +15,9 @@
             <tr *ngFor="let item of list">
                 <td scope="row">{{item?.id}}</td>
                 <td>{{item?.nome}}</td>
-                <td>{{item?.cnpj}}</td>
-                <td>{{item?.dataFundacao}}</td>
+                <td>{{item?.cpf}}</td>
+                <td>empresas</td>
+                <td>{{item?.cargo?.descricao}}</td>
                 <td class="text-center">
                     <button (click)="editar(item?.id)" type="button" class="btn btn-outline-primary rounded-pill grow">
               <i class="fa fa-edit mr-1"></i>Editar

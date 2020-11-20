@@ -8,6 +8,7 @@ import { CargoModule } from './page/cargo/cargo.module';
 import { CommonModule } from '@angular/common';
 import { CoreModule } from './core/core.module';
 import { EmpresaModule } from './page/empresa/empresa.module';
+import { FuncionarioModule } from './page/funcionario/funcionario.module';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { EmpresaModule } from './page/empresa/empresa.module';
     CoreModule,
     EmpresaModule,
     CargoModule,
+    FuncionarioModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

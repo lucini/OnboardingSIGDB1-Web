@@ -1,5 +1,6 @@
 import { Cargo } from "../app/shared/model/cargo";
 import { Empresa } from "../app/shared/model/empresa";
+import { Funcionario } from "../app/shared/model/funcionario";
 
 export const cargos: Cargo[] = [
     {id: 1, descricao: 'Baixista'},
@@ -14,4 +15,8 @@ export const empresas: Empresa[] = [
     {id: 1, nome: 'Mötorhead', cnpj:'', dataFundacao: ''},
     {id: 2, nome: 'Megadeth', cnpj:'', dataFundacao: ''},
     {id: 3, nome: 'Metallica', cnpj:'', dataFundacao: ''},
+];
+
+export const funcionarios: Funcionario[] = [
+    {id: 1, nome: 'Lemmy Kilmister', cpf: '34985739485'},
 ];
