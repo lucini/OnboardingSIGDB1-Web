@@ -20,6 +20,7 @@ export class FormFeedbackComponent implements OnInit {
 
     @Input() formGroup: FormGroup;
     @Input() field: string;
+    @Input() isValid = true;
 
     constructor() { }
 

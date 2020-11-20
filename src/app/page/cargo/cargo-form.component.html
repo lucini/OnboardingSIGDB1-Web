@@ -11,8 +11,8 @@
             <div class="col-12 col-lg-6 col-xl-9">
                 <div class="form-group">
                     <label for="descricao">Descrição</label>
-                    <input maxlength="250" formControlName="descricao" class="form-control" id="descricao" aria-describedby="descrição">
-                    <app-form-feedback [formGroup]="formGroup" field="descricao"></app-form-feedback>
+                    <input maxlength="250" formControlName="descricao" class="form-control" [class.is-invalid]="isValid('descricao')" id="descricao" aria-describedby="descrição">
+                    <app-form-feedback [isValid]="isValid('descricao')" [formGroup]="formGroup" field="descricao"></app-form-feedback>
                 </div>
             </div>
         </div>
