@@ -1,30 +1,30 @@
 <app-card title="Empresas" subTitle="Listagem">
     <div class="actions mb-2"><button type="button" (click)="novo()" class="btn btn-primary">Novo</button></div>
     <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Nome</th>
-          <th scope="col">C.N.P.J</th>
-          <th scope="col">Data Fundação</th>
-          <th class="text-center" scope="col">Ações</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let item of list">
-          <td scope="row">{{item?.id}}</td>
-          <td>{{item?.nome}}</td>
-          <td>{{item?.cnpj}}</td>
-          <td>{{item?.dataFundacao}}</td>
-          <td class="text-center">
-            <button (click)="editar(item?.id)" type="button" class="btn btn-outline-primary rounded-pill">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">C.N.P.J</th>
+                <th scope="col">Data Fundação</th>
+                <th class="text-center" scope="col">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of list">
+                <td scope="row">{{item?.id}}</td>
+                <td>{{item?.nome}}</td>
+                <td>{{item?.cnpj}}</td>
+                <td>{{item?.dataFundacao}}</td>
+                <td class="text-center">
+                    <button (click)="editar(item?.id)" type="button" class="btn btn-outline-primary rounded-pill grow">
               <i class="fa fa-edit mr-1"></i>Editar
             </button>
-            <button (click)="remover(item?.id)" type="button" class="btn btn-outline-danger rounded-pill">
+                    <button (click)="remover(item?.id)" type="button" class="btn btn-outline-danger rounded-pill grow">
               <i class="fa fa-trash mr-1"></i>Excluir
             </button>
-          </td>
-        </tr>
-      </tbody>
+                </td>
+            </tr>
+        </tbody>
     </table>
-  </app-card>
+</app-card>

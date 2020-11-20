@@ -1,5 +1,5 @@
 <app-card title="Cargo" subTitle="Cadastro">
-    <div class="actions"><button type="button" class="btn btn-light" (click)="voltar()">Voltar</button></div>
+    <div class="actions"><button type="button" class="btn btn-light grow" (click)="voltar()">Voltar</button></div>
     <form [formGroup]="formGroup" (ngSubmit)="salvar()">
         <div class="row">
             <div class="col-12 col-lg-6 col-xl-3">
@@ -11,13 +11,12 @@
             <div class="col-12 col-lg-6 col-xl-9">
                 <div class="form-group">
                     <label for="descricao">Descrição</label>
-                    <input maxlength="250" formControlName="descricao" class="form-control" id="descricao"
-                        aria-describedby="descrição">
+                    <input maxlength="250" formControlName="descricao" class="form-control" id="descricao" aria-describedby="descrição">
                 </div>
             </div>
         </div>
         <div class="text-right">
-            <button [disabled]="!formGroup.valid" type="submit" class="btn btn-primary">Salvar</button>
+            <button [disabled]="!formGroup.valid" type="submit" class="btn btn-primary grow">Salvar</button>
         </div>
     </form>
 </app-card>

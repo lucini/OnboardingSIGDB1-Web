@@ -24,11 +24,14 @@ export class CargoFormComponent extends CrudFormComponent<Cargo> implements OnIn
         this.activatedRoute.paramMap.subscribe(params => {
             const id = parseInt(params.get('id'));
             if (id) {
-                this.service.findById(id).subscribe( val =>
-                    this.formGroup.setValue(val)
-                );
+                this.service.findById(id).subscribe( val => {
+                    if(val) {
+                        this.formGroup.setValue(val)
+                    } else {
+                        this.voltar();
+                    }
+                });
             }
-
         });
     }
 
