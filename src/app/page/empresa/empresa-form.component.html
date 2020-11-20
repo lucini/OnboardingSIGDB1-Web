@@ -12,12 +12,14 @@
                 <div class="form-group">
                     <label for="nome">Nome</label>
                     <input maxlength="250" formControlName="nome" class="form-control" id="nome" aria-describedby="nome">
+                    <app-form-feedback [formGroup]="formGroup" field="nome"></app-form-feedback>
                 </div>
             </div>
             <div class="col-6 col-md-9">
                 <div class="form-group">
                     <label for="cnpj">CNPJ</label>
                     <input maxlength="250" formControlName="cnpj" class="form-control" id="cnpj" aria-describedby="cnpj">
+                    <app-form-feedback [formGroup]="formGroup" field="cnpj"></app-form-feedback>
                 </div>
             </div>
             <div class="col-6 col-md-3">
