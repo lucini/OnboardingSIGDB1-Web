@@ -1,5 +1,4 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { maskBr } from 'js-brasil/src/mask';
 
 @Pipe({
     name: 'cnpj'
@@ -7,6 +6,7 @@ import { maskBr } from 'js-brasil/src/mask';
 
 export class CnpjPipe implements PipeTransform {
     transform(value: any): string {
-        return maskBr.cnpj(value);
+        // return maskBr.cnpj(value);
+        return value;
     }
 }

@@ -4,6 +4,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 import { CrudFormComponent } from "../../shared/component/crud-form.component";
 import { Cargo } from "../../shared/model/cargo";
 import { CargoService } from "./cargo.service";
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 @Component({
     selector: 'app-cargo-form',
@@ -16,16 +17,16 @@ export class CargoFormComponent extends CrudFormComponent<Cargo> implements OnIn
         private fb: FormBuilder,
         private router: Router,
         private activatedRoute: ActivatedRoute) {
-            super();
-         }
+        super();
+    }
 
     ngOnInit() {
         this.initForm();
         this.activatedRoute.paramMap.subscribe(params => {
             const id = parseInt(params.get('id'));
             if (id) {
-                this.service.findById(id).subscribe( val => {
-                    if(val) {
+                this.service.findById(id).subscribe(val => {
+                    if (val) {
                         this.formGroup.setValue(val)
                     } else {
                         this.voltar();
@@ -38,7 +39,7 @@ export class CargoFormComponent extends CrudFormComponent<Cargo> implements OnIn
     initForm(): void {
         this.formGroup = this.fb.group({
             id: [''],
-            descricao: ['', Validators.required],
+            descricao: ['', Validators.required, Validators.maxLength(250)],
         });
     }
 
@@ -47,6 +48,7 @@ export class CargoFormComponent extends CrudFormComponent<Cargo> implements OnIn
     }
 
     salvar(): void {
-       this.service.save(this.formGroup.value).subscribe(() => this.voltar());
+        this.service.save(this.formGroup.value)
+            .subscribe(() => Swal.fire('Ok', 'Salvo com sucesso', 'success').then(() => this.voltar()));
     }
 }

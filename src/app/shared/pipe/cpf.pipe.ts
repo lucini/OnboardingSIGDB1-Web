@@ -1,5 +1,4 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { maskBr } from 'js-brasil';
 
 @Pipe({
     name: 'cpf'
@@ -7,6 +6,7 @@ import { maskBr } from 'js-brasil';
 
 export class CpfPipe implements PipeTransform {
     transform(value: any): string {
-        return maskBr.cpf(value);
+        // return maskBr.cpf(value);
+        return value;
     }
 }
