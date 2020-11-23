@@ -17,6 +17,13 @@
     ],
     "types": [
       "jest",
-    ]
+    ],
+    "baseUrl": "./src",
+    "paths": {
+      "@app/*": ["app/*"],
+      "@core/*": ["app/core/*"],
+      "@shared/*": ["app/shared/*"],
+      "@page/*": ["app/page/*"]
+    }
   }
 }

@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Cargo } from '@shared/model/cargo';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { CrudListComponent } from '../../shared/component/crud-list.component';
-import { Cargo } from '../../shared/model/cargo';
+import { CrudListComponent } from '@shared/component/crud-list.component';
 import { CargoService } from './cargo.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { CargoService } from './cargo.service';
     templateUrl: 'cargo-list.component.html',
 })
 
-export class CargoListComponent extends CrudListComponent<Cargo>  {
+export class CargoListComponent extends CrudListComponent<Cargo> {
 
     constructor(protected service: CargoService,
         private router: Router) {
