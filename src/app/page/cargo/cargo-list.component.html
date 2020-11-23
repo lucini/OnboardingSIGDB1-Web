@@ -1,26 +1,26 @@
 <app-card title="Cargos" subTitle="Listagem">
- <div class="actions mb-2"><button type="button" (click)="novo()" class="btn btn-primary grow">Novo</button></div>
- <table class="table">
-  <thead>
-   <tr>
-    <th scope="col">#</th>
-    <th scope="col">Descrição</th>
-    <th class="text-center" scope="col">Ações</th>
-   </tr>
-  </thead>
-  <tbody>
-   <tr *ngFor="let item of list">
-    <td scope="row">{{item?.id}}</td>
-    <td>{{item?.descricao}}</td>
-    <td class="text-center">
-     <button (click)="editar(item?.id)" type="button" class="btn btn-outline-primary rounded-pill grow">
-            <i class="fa fa-edit mr-1"></i>Editar
+  <div class="actions mb-2"><button type="button" (click)="novo()" class="btn btn-primary grow">Novo</button></div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Descrição</th>
+        <th class="text-center" scope="col">Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of list">
+        <td scope="row">{{item?.id}}</td>
+        <td>{{item?.descricao}}</td>
+        <td class="text-center">
+          <button (click)="editar(item?.id)" title="Editar" type="button" class="btn btn-outline-primary rounded-pill grow">
+            <i class="fa fa-edit"></i>
           </button>
-     <button (click)="remover(item?.id)" type="button" class="btn btn-outline-danger rounded-pill grow">
-            <i class="fa fa-trash mr-1"></i>Excluir
+          <button (click)="remover(item?.id)" title="Excluir" type="button" class="btn btn-outline-danger rounded-pill grow">
+            <i class="fa fa-trash"></i>
           </button>
-    </td>
-   </tr>
-  </tbody>
- </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </app-card>
