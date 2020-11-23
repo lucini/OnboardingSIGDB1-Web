@@ -12,13 +12,13 @@ import { FuncionarioFormComponent } from './page/funcionario/funcionario-form.co
 
 const routes: Routes = [
     {path: '', component: HomeComponent},
-    {path: 'empresa', component: EmpresaListComponent},
+    {path: 'empresa', component: EmpresaListComponent, data: {animation: 'fadeInOut'}},
     {path: 'empresa/form', component: EmpresaFormComponent},
     {path: 'empresa/form/:id', component: EmpresaFormComponent},
-    {path: 'funcionario', component: FuncionarioListComponent},
+    {path: 'funcionario', component: FuncionarioListComponent, data: {animation: 'fadeInOut'}},
     {path: 'funcionario/form', component: FuncionarioFormComponent},
     {path: 'funcionario/form/:id', component: FuncionarioFormComponent},
-    {path: 'cargo', component: CargoListComponent},
+    {path: 'cargo', component: CargoListComponent, data: {animation: 'fadeInOut'}},
     {path: 'cargo/form', component: CargoFormComponent},
     {path: 'cargo/form/:id', component: CargoFormComponent},
     {path: '**', redirectTo: ''},
