@@ -1,3 +1,4 @@
+import { empresas } from './../../../data/data-api';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -16,8 +17,8 @@ export class FuncionarioFormComponent extends CrudFormComponent<Funcionario> imp
         private fb: FormBuilder,
         private router: Router,
         private activatedRoute: ActivatedRoute) {
-            super();
-         }
+        super();
+    }
 
     ngOnInit() {
         this.initForm();
@@ -25,7 +26,7 @@ export class FuncionarioFormComponent extends CrudFormComponent<Funcionario> imp
             // tslint:disable-next-line: radix
             const id = parseInt(params.get('id'));
             if (id) {
-                this.service.findById(id).subscribe( val => {
+                this.service.findById(id).subscribe(val => {
                     if (val) {
                         this.formGroup.setValue(val);
                     } else {
@@ -41,6 +42,7 @@ export class FuncionarioFormComponent extends CrudFormComponent<Funcionario> imp
             id: [''],
             nome: ['', Validators.required],
             cpf: ['', Validators.required],
+            empresas: [[]],
         });
     }
 
@@ -49,6 +51,6 @@ export class FuncionarioFormComponent extends CrudFormComponent<Funcionario> imp
     }
 
     salvar(): void {
-       this.service.save(this.formGroup.value).subscribe(() => this.voltar());
+        this.service.save(this.formGroup.value).subscribe(() => this.voltar());
     }
 }

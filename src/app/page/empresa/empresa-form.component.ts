@@ -16,8 +16,8 @@ export class EmpresaFormComponent extends CrudFormComponent<Empresa> implements 
         private fb: FormBuilder,
         private router: Router,
         private activatedRoute: ActivatedRoute) {
-            super();
-         }
+        super();
+    }
 
     ngOnInit() {
         this.initForm();
@@ -25,7 +25,7 @@ export class EmpresaFormComponent extends CrudFormComponent<Empresa> implements 
             // tslint:disable-next-line: radix
             const id = parseInt(params.get('id'));
             if (id) {
-                this.service.findById(id).subscribe( val => {
+                this.service.findById(id).subscribe(val => {
                     if (val) {
                         this.formGroup.setValue(val);
                     } else {
@@ -50,6 +50,6 @@ export class EmpresaFormComponent extends CrudFormComponent<Empresa> implements 
     }
 
     salvar(): void {
-       this.service.save(this.formGroup.value).subscribe(() => this.voltar());
+        this.service.save(this.formGroup.value).subscribe(() => this.voltar());
     }
 }
