@@ -1,9 +1,9 @@
-import { Component, OnInit } from "@angular/core";
-import { FormBuilder, Validators } from "@angular/forms";
-import { ActivatedRoute, Router } from "@angular/router";
-import { CrudFormComponent } from "../../shared/component/crud-form.component";
-import { Funcionario } from "../../shared/model/funcionario";
-import { FuncionarioService } from "./funcionario.service";
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { CrudFormComponent } from '../../shared/component/crud-form.component';
+import { Funcionario } from '../../shared/model/funcionario';
+import { FuncionarioService } from './funcionario.service';
 
 @Component({
     selector: 'app-funcionario-form',
@@ -22,11 +22,12 @@ export class FuncionarioFormComponent extends CrudFormComponent<Funcionario> imp
     ngOnInit() {
         this.initForm();
         this.activatedRoute.paramMap.subscribe(params => {
+            // tslint:disable-next-line: radix
             const id = parseInt(params.get('id'));
             if (id) {
                 this.service.findById(id).subscribe( val => {
-                    if(val) {
-                        this.formGroup.setValue(val)
+                    if (val) {
+                        this.formGroup.setValue(val);
                     } else {
                         this.voltar();
                     }

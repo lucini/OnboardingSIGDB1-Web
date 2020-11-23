@@ -1,9 +1,9 @@
-import { Component, OnInit } from "@angular/core";
-import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
-import { ActivatedRoute, Router } from "@angular/router";
-import { CrudFormComponent } from "../../shared/component/crud-form.component";
-import { Cargo } from "../../shared/model/cargo";
-import { CargoService } from "./cargo.service";
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { CrudFormComponent } from '../../shared/component/crud-form.component';
+import { Cargo } from '../../shared/model/cargo';
+import { CargoService } from './cargo.service';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 @Component({
@@ -23,11 +23,12 @@ export class CargoFormComponent extends CrudFormComponent<Cargo> implements OnIn
     ngOnInit() {
         this.initForm();
         this.activatedRoute.paramMap.subscribe(params => {
+            // tslint:disable-next-line: radix
             const id = parseInt(params.get('id'));
             if (id) {
                 this.service.findById(id).subscribe(val => {
                     if (val) {
-                        this.formGroup.setValue(val)
+                        this.formGroup.setValue(val);
                     } else {
                         this.voltar();
                     }

@@ -1,8 +1,8 @@
-import { Component } from "@angular/core";
-import { Router } from "@angular/router";
-import { CrudListComponent } from "../../shared/component/crud-list.component";
-import { Funcionario } from "../../shared/model/funcionario";
-import { FuncionarioService } from "./funcionario.service";
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { CrudListComponent } from '../../shared/component/crud-list.component';
+import { Funcionario } from '../../shared/model/funcionario';
+import { FuncionarioService } from './funcionario.service';
 
 @Component({
     selector: 'app-funcionario-list',

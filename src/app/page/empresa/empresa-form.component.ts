@@ -1,9 +1,9 @@
-import { Component, OnInit } from "@angular/core";
-import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
-import { ActivatedRoute, Router } from "@angular/router";
-import { CrudFormComponent } from "../../shared/component/crud-form.component";
-import { Empresa } from "../../shared/model/empresa";
-import { EmpresaService } from "./empresa.service";
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { CrudFormComponent } from '../../shared/component/crud-form.component';
+import { Empresa } from '../../shared/model/empresa';
+import { EmpresaService } from './empresa.service';
 
 @Component({
     selector: 'app-empresa-form',
@@ -22,11 +22,12 @@ export class EmpresaFormComponent extends CrudFormComponent<Empresa> implements 
     ngOnInit() {
         this.initForm();
         this.activatedRoute.paramMap.subscribe(params => {
+            // tslint:disable-next-line: radix
             const id = parseInt(params.get('id'));
             if (id) {
                 this.service.findById(id).subscribe( val => {
-                    if(val) {
-                        this.formGroup.setValue(val)
+                    if (val) {
+                        this.formGroup.setValue(val);
                     } else {
                         this.voltar();
                     }

@@ -1,8 +1,8 @@
-import { Component, OnInit } from "@angular/core";
-import { Router } from "@angular/router";
-import { CrudListComponent } from "../../shared/component/crud-list.component";
-import { Empresa } from "../../shared/model/empresa";
-import { EmpresaService } from "./empresa.service";
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CrudListComponent } from '../../shared/component/crud-list.component';
+import { Empresa } from '../../shared/model/empresa';
+import { EmpresaService } from './empresa.service';
 
 @Component({
     selector: 'app-empresa-list',
