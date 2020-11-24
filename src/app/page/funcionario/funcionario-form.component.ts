@@ -1,3 +1,4 @@
+import { cpfMask } from './../../shared/mask/mask';
 import { empresas } from './../../../data/data-api';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
@@ -5,6 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CrudFormComponent } from '../../shared/component/crud-form.component';
 import { Funcionario } from '../../shared/model/funcionario';
 import { FuncionarioService } from './funcionario.service';
+import { ValidateCpf } from '@app/shared/validator/cpfCnpj.directive';
 
 @Component({
     selector: 'app-funcionario-form',

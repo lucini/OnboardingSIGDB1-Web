@@ -11,17 +11,32 @@ import { FuncionarioListComponent } from './page/funcionario/funcionario-list.co
 import { FuncionarioFormComponent } from './page/funcionario/funcionario-form.component';
 
 const routes: Routes = [
-    {path: '', component: HomeComponent},
-    {path: 'empresa', component: EmpresaListComponent, data: {animation: 'fadeInOut'}},
-    {path: 'empresa/form', component: EmpresaFormComponent},
-    {path: 'empresa/form/:id', component: EmpresaFormComponent},
-    {path: 'funcionario', component: FuncionarioListComponent, data: {animation: 'fadeInOut'}},
-    {path: 'funcionario/form', component: FuncionarioFormComponent},
-    {path: 'funcionario/form/:id', component: FuncionarioFormComponent},
-    {path: 'cargo', component: CargoListComponent, data: {animation: 'fadeInOut'}},
-    {path: 'cargo/form', component: CargoFormComponent},
-    {path: 'cargo/form/:id', component: CargoFormComponent},
-    {path: '**', redirectTo: ''},
+    { path: '', component: HomeComponent },
+    { path: 'empresa', component: EmpresaListComponent, data: { animation: 'fadeInOut' } },
+    {
+        path: 'empresa/form',
+        children: [
+            { path: '', component: EmpresaFormComponent },
+            { path: ':id', component: EmpresaFormComponent },
+        ],
+    },
+    { path: 'funcionario', component: FuncionarioListComponent, data: { animation: 'fadeInOut' } },
+    {
+        path: 'funcionario/form',
+        children: [
+            { path: '', component: FuncionarioFormComponent },
+            { path: ':id', component: FuncionarioFormComponent },
+        ],
+    },
+    { path: 'cargo', component: CargoListComponent, data: { animation: 'fadeInOut' } },
+    {
+        path: 'cargo/form',
+        children: [
+            { path: '', component: CargoFormComponent },
+            { path: ':id', component: CargoFormComponent },
+        ],
+    },
+    { path: '**', redirectTo: '' },
 ];
 
 @NgModule({

@@ -18,7 +18,7 @@
       <div class="col-6 col-md-9">
         <div class="form-group">
           <label for="cpf">CPF</label>
-          <input maxlength="250" [class.is-invalid]="isValid('cpf')" formControlName="cpf" class="form-control" id="cpf" aria-describedby="cpf">
+          <input [value]="formGroup.get('cpf').value | cpf" maxlength="14" [class.is-invalid]="isValid('cpf')" formControlName="cpf" class="form-control" id="cpf" aria-describedby="cpf">
           <app-form-feedback [isValid]="isValid('cpf')" [formGroup]="formGroup" field="cpf"></app-form-feedback>
         </div>
       </div>

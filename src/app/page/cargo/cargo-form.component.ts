@@ -20,7 +20,7 @@ export class CargoFormComponent extends CrudFormComponent<Cargo> implements OnIn
         super();
     }
 
-    ngOnInit() {
+    ngOnInit(): void {
         this.initForm();
         this.activatedRoute.paramMap.subscribe(params => {
             // tslint:disable-next-line: radix
@@ -40,7 +40,7 @@ export class CargoFormComponent extends CrudFormComponent<Cargo> implements OnIn
     initForm(): void {
         this.formGroup = this.fb.group({
             id: [''],
-            descricao: ['', Validators.required, Validators.maxLength(250)],
+            descricao: ['', Validators.required],
         });
     }
 
