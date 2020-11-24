@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
+import { Cargo } from '@shared/model/cargo';
+import { BaseService } from '@shared/service/base.service';
+
 import { cargos } from '../../../data/data-api';
-import { Cargo } from '../../shared/model/cargo';
-import { BaseService } from '../../shared/service/base.service';
 
 @Injectable()
 export class CargoService extends BaseService<Cargo> {
-    constructor() { 
+    constructor() {
         super(cargos);
     }
 }
