@@ -1,23 +1,23 @@
 <app-card title="Cargo" subTitle="Cadastro">
- <div class="actions"><button type="button" class="btn btn-light grow" (click)="voltar()">Voltar</button></div>
- <form [formGroup]="formGroup" (ngSubmit)="salvar()">
-  <div class="row">
-   <div class="col-12 col-lg-6 col-xl-3">
-    <div class="form-group">
-     <label for="codigo">Id</label>
-     <input formControlName="id" readonly class="form-control" id="codigo" aria-describedby="código">
+  <div class="actions"><button type="button" class="btn btn-light grow" (click)="voltar()">Voltar</button></div>
+  <form [formGroup]="formGroup" (ngSubmit)="save()">
+    <div class="row">
+      <div class="col-12 col-lg-6 col-xl-3">
+        <div class="form-group">
+          <label for="codigo">Id</label>
+          <input formControlName="id" readonly class="form-control" id="codigo" aria-describedby="código">
+        </div>
+      </div>
+      <div class="col-12 col-lg-6 col-xl-9">
+        <div class="form-group">
+          <label for="descricao">Descrição</label>
+          <input maxlength="250" formControlName="descricao" class="form-control" [class.is-invalid]="isValid('descricao')" id="descricao" aria-describedby="descrição">
+          <app-form-feedback [isValid]="isValid('descricao')" [formGroup]="formGroup" field="descricao"></app-form-feedback>
+        </div>
+      </div>
     </div>
-   </div>
-   <div class="col-12 col-lg-6 col-xl-9">
-    <div class="form-group">
-     <label for="descricao">Descrição</label>
-     <input maxlength="250" formControlName="descricao" class="form-control" [class.is-invalid]="isValid('descricao')" id="descricao" aria-describedby="descrição">
-     <app-form-feedback [isValid]="isValid('descricao')" [formGroup]="formGroup" field="descricao"></app-form-feedback>
+    <div class="text-right">
+      <button [disabled]="!formGroup.valid" type="submit" class="btn btn-primary grow">Salvar</button>
     </div>
-   </div>
-  </div>
-  <div class="text-right">
-   <button [disabled]="!formGroup.valid" type="submit" class="btn btn-primary grow">Salvar</button>
-  </div>
- </form>
+  </form>
 </app-card>

@@ -6,7 +6,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CrudFormComponent } from '../../shared/component/crud-form.component';
 import { Funcionario } from '../../shared/model/funcionario';
 import { FuncionarioService } from './funcionario.service';
-import { ValidateCpf } from '@app/shared/validator/cpfCnpj.directive';
 
 @Component({
     selector: 'app-funcionario-form',
@@ -52,7 +51,7 @@ export class FuncionarioFormComponent extends CrudFormComponent<Funcionario> imp
         this.router.navigate(['/funcionario']);
     }
 
-    salvar(): void {
+    save(): void {
         this.service.save(this.formGroup.value).subscribe(() => this.voltar());
     }
 }

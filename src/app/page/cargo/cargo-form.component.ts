@@ -48,7 +48,7 @@ export class CargoFormComponent extends CrudFormComponent<Cargo> implements OnIn
         this.router.navigate(['/cargo']);
     }
 
-    salvar(): void {
+    save(): void {
         this.service.save(this.formGroup.value)
             .subscribe(() => Swal.fire('Ok', 'Salvo com sucesso', 'success').then(() => this.voltar()));
     }

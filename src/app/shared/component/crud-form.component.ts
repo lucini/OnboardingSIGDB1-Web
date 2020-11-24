@@ -5,6 +5,20 @@ export abstract class CrudFormComponent<T> {
 
     isValid(campo): boolean {
         return this.formGroup.controls[campo].invalid &&
-          (this.formGroup.controls[campo].dirty || this.formGroup.controls[campo].touched);
+            (this.formGroup.controls[campo].dirty || this.formGroup.controls[campo].touched);
+    }
+
+    abstract initForm(): void;
+
+    preSave(): void {
+
+    }
+
+    postSave(): void {
+
+    }
+
+    save(): void {
+
     }
 }

@@ -49,7 +49,7 @@ export class EmpresaFormComponent extends CrudFormComponent<Empresa> implements 
         this.router.navigate(['/empresa']);
     }
 
-    salvar(): void {
+    save(): void {
         this.service.save(this.formGroup.value).subscribe(() => this.voltar());
     }
 }
