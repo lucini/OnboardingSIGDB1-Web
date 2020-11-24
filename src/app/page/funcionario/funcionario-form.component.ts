@@ -6,7 +6,7 @@ import { FuncionarioService } from './funcionario.service';
 
 @Component({
     selector: 'app-funcionario-form',
-    templateUrl: 'funcionario-form.component.html'
+    templateUrl: 'funcionario-form.component.html',
 })
 
 export class FuncionarioFormComponent extends CrudFormComponent<Funcionario> implements OnInit {

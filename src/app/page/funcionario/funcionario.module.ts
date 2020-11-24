@@ -1,3 +1,4 @@
+import { FuncionarioEmpresaFormComponent } from './funcionario-empresa-form.component';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -17,6 +18,7 @@ import { FuncionarioService } from './funcionario.service';
     declarations: [
         FuncionarioListComponent,
         FuncionarioFormComponent,
+        FuncionarioEmpresaFormComponent,
     ],
     providers: [FuncionarioService],
 })

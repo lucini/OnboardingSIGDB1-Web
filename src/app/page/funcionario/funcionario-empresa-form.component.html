@@ -1,0 +1,21 @@
+<app-card title="Vincular Funcionário a uma Empresa" subTitle="Cadastro">
+  <div class="actions"><button type="button" class="btn btn-light grow" (click)="voltar()">Voltar</button></div>
+  <form [formGroup]="formGroup" (ngSubmit)="save()">
+    <div class="row">
+      <div class="col-12">
+        <div class="form-group">
+          <label for="nome">Nome</label>
+          <input disabled maxlength="250" formControlName="nome" class="form-control" id="nome" aria-describedby="nome">
+        </div>
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="form-group">
+        <label for="empresas">Empresas</label>
+      </div>
+    </div>
+    <div class="text-right">
+      <button [disabled]="!formGroup.valid" type="submit" class="btn btn-primary grow">Salvar</button>
+    </div>
+  </form>
+</app-card>
