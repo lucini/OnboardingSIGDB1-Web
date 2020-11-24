@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Injector } from '@angular/core';
 import { Router } from '@angular/router';
 import { CrudListComponent } from '../../shared/component/crud-list.component';
 import { Funcionario } from '../../shared/model/funcionario';
@@ -12,19 +12,11 @@ import { FuncionarioService } from './funcionario.service';
 export class FuncionarioListComponent extends CrudListComponent<Funcionario>  {
 
     constructor(protected service: FuncionarioService,
-        private router: Router) {
-        super(service);
+        protected injector: Injector) {
+        super(service, injector, 'funcionario');
         this.actions = [
             { title: 'Vincular Empresa'},
             { title: 'Vincular Cargo'},
         ];
-    }
-
-    novo(): void {
-        this.router.navigate(['/funcionario/form']);
-    }
-
-    editar(id: number): void {
-        this.router.navigate(['/funcionario/form', id]);
     }
 }

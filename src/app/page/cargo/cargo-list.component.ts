@@ -1,5 +1,5 @@
 import { Cargo } from '@shared/model/cargo';
-import { Component } from '@angular/core';
+import { Component, Injector } from '@angular/core';
 import { Router } from '@angular/router';
 import { CrudListComponent } from '@shared/component/crud-list.component';
 import { CargoService } from './cargo.service';
@@ -12,15 +12,7 @@ import { CargoService } from './cargo.service';
 export class CargoListComponent extends CrudListComponent<Cargo> {
 
     constructor(protected service: CargoService,
-        private router: Router) {
-        super(service);
-    }
-
-    novo(): void {
-        this.router.navigate(['/cargo/form']);
-    }
-
-    editar(id: number): void {
-        this.router.navigate(['/cargo/form', id]);
+        protected injector: Injector) {
+        super(service, injector, 'cargo');
     }
 }
