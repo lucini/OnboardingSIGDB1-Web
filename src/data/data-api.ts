@@ -1,6 +1,6 @@
-import { Cargo } from "../app/shared/model/cargo";
-import { Empresa } from "../app/shared/model/empresa";
-import { Funcionario } from "../app/shared/model/funcionario";
+import { Cargo } from '../app/shared/model/cargo';
+import { Empresa } from '../app/shared/model/empresa';
+import { Funcionario } from '../app/shared/model/funcionario';
 
 export const cargos: Cargo[] = [
     {id: 1, descricao: 'Baixista'},
@@ -12,9 +12,9 @@ export const cargos: Cargo[] = [
 ];
 
 export const empresas: Empresa[] = [
-    {id: 1, nome: 'Mötorhead', cnpj:'96004688000157', dataFundacao: ''},
-    {id: 2, nome: 'Megadeth', cnpj:'60149614000161', dataFundacao: ''},
-    {id: 3, nome: 'Metallica', cnpj:'28608185000130', dataFundacao: ''},
+    {id: 1, nome: 'Mötorhead', cnpj: '96004688000157', dataFundacao: ''},
+    {id: 2, nome: 'Megadeth', cnpj: '60149614000161', dataFundacao: ''},
+    {id: 3, nome: 'Metallica', cnpj: '28608185000130', dataFundacao: ''},
 ];
 
 export const funcionarios: Funcionario[] = [
