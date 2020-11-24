@@ -1,5 +1,6 @@
-import { Observable } from "rxjs/Observable";
-import { of } from "rxjs/observable/of";
+import { Observable } from 'rxjs/Observable';
+import { of } from 'rxjs/observable/of';
+import { tap } from 'rxjs/operators';
 /**
  * Simulando comunicação com a API
  */
@@ -35,7 +36,6 @@ export abstract class BaseService<T> {
 
     deleteById(id: number): Observable<void> {
         const index = this._lista.findIndex(v => v['id'] === id);
-        this._lista.splice(index, 1);
-        return of();
+        return of(null).pipe(tap(() => this._lista.splice(index, 1)));
     }
 }
