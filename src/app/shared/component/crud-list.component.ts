@@ -27,4 +27,8 @@ export abstract class CrudListComponent<T> implements OnInit {
             // Swal.fire('Ok', 'Excluído com sucesso', 'success');
         });
     }
+
+    trackById(index: number, item: T): void {
+        return item['id'];
+    }
 }
