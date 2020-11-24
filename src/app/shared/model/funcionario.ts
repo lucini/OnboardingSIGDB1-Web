@@ -1,5 +1,5 @@
-import { Cargo } from "./cargo";
-import { Empresa } from "./empresa";
+import { Cargo } from './cargo';
+import { Empresa } from './empresa';
 
 export interface Funcionario {
     id: number;
