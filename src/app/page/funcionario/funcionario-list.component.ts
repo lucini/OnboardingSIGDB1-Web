@@ -1,7 +1,8 @@
 import { Component, Injector } from '@angular/core';
-import { Router } from '@angular/router';
-import { CrudListComponent } from '../../shared/component/crud-list.component';
-import { Funcionario } from '../../shared/model/funcionario';
+
+import { CrudListComponent } from '@shared/component/crud-list.component';
+import { Funcionario } from '@shared/model/funcionario';
+
 import { FuncionarioService } from './funcionario.service';
 
 @Component({
@@ -15,8 +16,8 @@ export class FuncionarioListComponent extends CrudListComponent<Funcionario>  {
         protected injector: Injector) {
         super(service, injector, 'funcionario');
         this.actions = [
-            { title: 'Vincular Empresa'},
-            { title: 'Vincular Cargo'},
+            { title: 'Vincular Empresa' },
+            { title: 'Vincular Cargo' },
         ];
     }
 }

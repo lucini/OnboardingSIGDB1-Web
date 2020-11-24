@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuItem } from '../../shared/model/menu-item';
+import { MenuItem } from '@shared/model/menu-item';
 
 @Component({
     selector: 'app-navbar',
-    templateUrl: 'navbar.component.html'
+    templateUrl: 'navbar.component.html',
 })
 
 export class NavbarComponent implements OnInit {

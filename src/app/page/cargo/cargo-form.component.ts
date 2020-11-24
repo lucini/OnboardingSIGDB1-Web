@@ -1,12 +1,14 @@
 import { Component, Injector } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
-import { CrudFormComponent } from '../../shared/component/crud-form.component';
-import { Cargo } from '../../shared/model/cargo';
+import { Validators } from '@angular/forms';
+
+import { CrudFormComponent } from '@shared/component/crud-form.component';
+import { Cargo } from '@shared/model/cargo';
+
 import { CargoService } from './cargo.service';
 
 @Component({
     selector: 'app-cargo-form',
-    templateUrl: 'cargo-form.component.html'
+    templateUrl: 'cargo-form.component.html',
 })
 
 export class CargoFormComponent extends CrudFormComponent<Cargo> {

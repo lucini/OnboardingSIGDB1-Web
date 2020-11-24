@@ -1,8 +1,9 @@
-import { Router } from '@angular/router';
 import { Injector, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import Swal from 'sweetalert2/dist/sweetalert2.js';
+
 import { MenuItem } from '../model/menu-item';
 import { BaseService } from '../service/base.service';
-import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 export abstract class CrudListComponent<T> implements OnInit {
     list: T[];

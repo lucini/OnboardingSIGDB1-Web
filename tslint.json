@@ -152,6 +152,23 @@
         "functions": "never",
         "typeLiterals": "ignore"
       }
-    }]
+    }],
+    "ordered-imports": [
+      true,
+      {
+        "import-sources-order": "case-insensitive",
+        "named-imports-order": "case-insensitive",
+        "grouped-imports": true,
+        "groups": [
+          { "match": "^@app", "order": 20 },
+          { "match": "^@env", "order": 30 },
+          { "match": "^@core", "order": 40 },
+          { "match": "^@shared", "order": 50 },
+          { "name": "parent_dir", "match": "^[.][.]", "order": 60 },
+          { "name": "current dir", "match": "^[.]", "order": 70 },
+          { "match": "*", "order": 10 }
+        ]
+      }
+    ]
   }
 }

@@ -1,12 +1,13 @@
 import { Component, Injector, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
-import { CrudFormComponent } from '../../shared/component/crud-form.component';
-import { Empresa } from '../../shared/model/empresa';
+import { Validators } from '@angular/forms';
+import { CrudFormComponent } from '@shared/component/crud-form.component';
+import { Empresa } from '@shared/model/empresa';
+
 import { EmpresaService } from './empresa.service';
 
 @Component({
     selector: 'app-empresa-form',
-    templateUrl: 'empresa-form.component.html'
+    templateUrl: 'empresa-form.component.html',
 })
 
 export class EmpresaFormComponent extends CrudFormComponent<Empresa> implements OnInit {

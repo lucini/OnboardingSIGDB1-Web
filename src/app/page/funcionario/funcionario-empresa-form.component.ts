@@ -1,8 +1,8 @@
-import { FuncionarioService } from './funcionario.service';
-import { Component, Injector, Input, OnInit } from '@angular/core';
+import { Component, Injector, Input } from '@angular/core';
 import { CrudFormComponent } from '@app/shared/component/crud-form.component';
 import { FuncionarioEmpresa } from '@app/shared/model/funcionario-empresa';
 import { BaseService } from '@app/shared/service/base.service';
+
 
 @Component({
     selector: 'app-funcionario-empresa',
@@ -15,9 +15,9 @@ export class FuncionarioEmpresaFormComponent extends CrudFormComponent<Funcionar
 
     constructor(protected service: BaseService<FuncionarioEmpresa>, protected injector: Injector) {
         super(service, injector);
-     }
+    }
 
-     initForm(): void {
+    initForm(): void {
 
-     }
+    }
 }

@@ -1,6 +1,7 @@
-import { fadeInOut } from './shared/animation/animation';
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+
+import { fadeInOut } from '@shared/animation/animation';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,7 @@ import { RouterOutlet } from '@angular/router';
   ],
 })
 export class AppComponent {
-  prepareRoute(outlet: RouterOutlet) {
+  prepareRoute(outlet: RouterOutlet): boolean {
     return outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation;
   }
 }

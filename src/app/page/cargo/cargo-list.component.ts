@@ -1,7 +1,7 @@
-import { Cargo } from '@shared/model/cargo';
 import { Component, Injector } from '@angular/core';
-import { Router } from '@angular/router';
 import { CrudListComponent } from '@shared/component/crud-list.component';
+import { Cargo } from '@shared/model/cargo';
+
 import { CargoService } from './cargo.service';
 
 @Component({

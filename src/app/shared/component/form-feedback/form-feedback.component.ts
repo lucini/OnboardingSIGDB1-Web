@@ -1,5 +1,4 @@
 import { Component, Input, OnInit } from '@angular/core';
-
 import { FormGroup } from '@angular/forms';
 import { fadeInOut } from '@app/shared/animation/animation';
 
@@ -7,8 +6,8 @@ import { fadeInOut } from '@app/shared/animation/animation';
     selector: 'app-form-feedback',
     templateUrl: 'form-feedback.component.html',
     animations: [
-        fadeInOut
-    ]
+        fadeInOut,
+    ],
 })
 
 export class FormFeedbackComponent implements OnInit {

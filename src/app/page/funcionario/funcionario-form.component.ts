@@ -1,7 +1,9 @@
 import { Component, Injector, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
-import { CrudFormComponent } from '../../shared/component/crud-form.component';
-import { Funcionario } from '../../shared/model/funcionario';
+import { Validators } from '@angular/forms';
+import { Funcionario } from '@shared/model/funcionario';
+
+import { CrudFormComponent } from '@shared/component/crud-form.component';
+
 import { FuncionarioService } from './funcionario.service';
 
 @Component({
