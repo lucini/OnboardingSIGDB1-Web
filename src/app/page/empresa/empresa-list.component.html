@@ -21,11 +21,19 @@
         <td>{{item?.dataFundacao}}</td>
         <td class="text-center">
           <button (click)="editar(item?.id)" title="Editar" type="button" class="btn btn-outline-primary rounded-pill grow">
-        <i class="fa fa-edit"></i>
-      </button>
+            <i class="fa fa-edit"></i>
+          </button>
           <button (click)="remover(item?.id)" title="Excluir" type="button" class="btn btn-outline-danger rounded-pill grow">
-        <i class="fa fa-trash"></i>
-      </button>
+            <i class="fa fa-trash"></i>
+          </button>
+          <div *ngIf="actions?.length" class="btn-group">
+            <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Mais Opções
+                </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a *ngFor="let action of actions" (click)="action?.click" class="dropdown-item" href="#">{{action?.title}}</a>
+            </div>
+          </div>
         </td>
       </tr>
     </tbody>

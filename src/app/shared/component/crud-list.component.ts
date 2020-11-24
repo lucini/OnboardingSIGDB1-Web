@@ -1,8 +1,10 @@
 import { OnInit } from '@angular/core';
+import { MenuItem } from '../model/menu-item';
 import { BaseService } from '../service/base.service';
 
 export abstract class CrudListComponent<T> implements OnInit {
     list: T[];
+    actions: MenuItem[] = [];
 
     constructor(protected service: BaseService<T>) {
     }

@@ -14,6 +14,10 @@ export class FuncionarioListComponent extends CrudListComponent<Funcionario>  {
     constructor(protected service: FuncionarioService,
         private router: Router) {
         super(service);
+        this.actions = [
+            { title: 'Vincular Empresa'},
+            { title: 'Vincular Cargo'},
+        ];
     }
 
     novo(): void {

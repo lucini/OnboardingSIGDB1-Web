@@ -3,4 +3,5 @@ export interface MenuItem {
     icon?: string;
     routerLink?: string;
     active?: boolean;
+    click?: Function;
 }
