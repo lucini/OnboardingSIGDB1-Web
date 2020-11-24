@@ -6,12 +6,10 @@
     "module": "commonjs",
     "types": [
       "jest",
-      "node"
+      "node",
+      "jsdom"
     ]
   },
-  "files": [
-    "test.ts"
-  ],
   "include": [
     "**/*.spec.ts",
     "**/*.d.ts"
