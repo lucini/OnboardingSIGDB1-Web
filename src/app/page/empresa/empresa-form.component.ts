@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, Injector, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 import { CrudFormComponent } from '../../shared/component/crud-form.component';
 import { Empresa } from '../../shared/model/empresa';
 import { EmpresaService } from './empresa.service';
@@ -12,28 +11,9 @@ import { EmpresaService } from './empresa.service';
 
 export class EmpresaFormComponent extends CrudFormComponent<Empresa> implements OnInit {
 
-    constructor(private service: EmpresaService,
-        private fb: FormBuilder,
-        private router: Router,
-        private activatedRoute: ActivatedRoute) {
-        super();
-    }
-
-    ngOnInit() {
-        this.initForm();
-        this.activatedRoute.paramMap.subscribe(params => {
-            // tslint:disable-next-line: radix
-            const id = parseInt(params.get('id'));
-            if (id) {
-                this.service.findById(id).subscribe(val => {
-                    if (val) {
-                        this.formGroup.setValue(val);
-                    } else {
-                        this.voltar();
-                    }
-                });
-            }
-        });
+    constructor(protected service: EmpresaService,
+        protected injector: Injector) {
+        super(service, injector, 'empresa');
     }
 
     initForm(): void {
@@ -43,13 +23,5 @@ export class EmpresaFormComponent extends CrudFormComponent<Empresa> implements 
             cnpj: ['', Validators.required],
             dataFundacao: ['', Validators.required],
         });
-    }
-
-    voltar(): void {
-        this.router.navigate(['/empresa']);
-    }
-
-    save(): void {
-        this.service.save(this.formGroup.value).subscribe(() => this.voltar());
     }
 }

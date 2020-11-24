@@ -1,8 +1,5 @@
-import { cpfMask } from './../../shared/mask/mask';
-import { empresas } from './../../../data/data-api';
-import { Component, OnInit } from '@angular/core';
+import { Component, Injector, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
 import { CrudFormComponent } from '../../shared/component/crud-form.component';
 import { Funcionario } from '../../shared/model/funcionario';
 import { FuncionarioService } from './funcionario.service';
@@ -14,28 +11,9 @@ import { FuncionarioService } from './funcionario.service';
 
 export class FuncionarioFormComponent extends CrudFormComponent<Funcionario> implements OnInit {
 
-    constructor(private service: FuncionarioService,
-        private fb: FormBuilder,
-        private router: Router,
-        private activatedRoute: ActivatedRoute) {
-        super();
-    }
-
-    ngOnInit() {
-        this.initForm();
-        this.activatedRoute.paramMap.subscribe(params => {
-            // tslint:disable-next-line: radix
-            const id = parseInt(params.get('id'));
-            if (id) {
-                this.service.findById(id).subscribe(val => {
-                    if (val) {
-                        this.formGroup.setValue(val);
-                    } else {
-                        this.voltar();
-                    }
-                });
-            }
-        });
+    constructor(protected service: FuncionarioService,
+        protected injector: Injector) {
+        super(service, injector, 'funcionario');
     }
 
     initForm(): void {
@@ -45,13 +23,5 @@ export class FuncionarioFormComponent extends CrudFormComponent<Funcionario> imp
             cpf: ['', Validators.required],
             empresas: [[]],
         });
-    }
-
-    voltar(): void {
-        this.router.navigate(['/funcionario']);
-    }
-
-    save(): void {
-        this.service.save(this.formGroup.value).subscribe(() => this.voltar());
     }
 }
