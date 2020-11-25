@@ -12,9 +12,9 @@ export const cargos: Cargo[] = [
 ];
 
 export const empresas: Empresa[] = [
-    {id: 1, nome: 'Mötorhead', cnpj: '96004688000157', dataFundacao: ''},
-    {id: 2, nome: 'Megadeth', cnpj: '60149614000161', dataFundacao: ''},
-    {id: 3, nome: 'Metallica', cnpj: '28608185000130', dataFundacao: ''},
+    {id: 1, nome: 'Mötorhead', cnpj: '96004688000157', dataFundacao: new Date()},
+    {id: 2, nome: 'Megadeth', cnpj: '60149614000161', dataFundacao: new Date()},
+    {id: 3, nome: 'Metallica', cnpj: '28608185000130', dataFundacao: new Date()},
 ];
 
 export const funcionarios: Funcionario[] = [

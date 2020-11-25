@@ -11,7 +11,7 @@
       <div class="col-12 col-lg-6 col-xl-10">
         <div class="form-group">
           <label for="nome">Nome</label>
-          <input maxlength="250" formControlName="nome" class="form-control" id="nome" aria-describedby="nome">
+          <input maxlength="150" formControlName="nome" class="form-control" id="nome" aria-describedby="nome">
           <app-form-feedback [formGroup]="formGroup" field="nome"></app-form-feedback>
         </div>
       </div>
@@ -25,7 +25,17 @@
       <div class="col-6 col-md-3">
         <div class="form-group">
           <label for="dataFundacao">Data de Fundação</label>
-          <input maxlength="250" formControlName="dataFundacao" class="form-control" id="dataFundacao" aria-describedby="dataFundacao">
+          <div class="input-group">
+            <input formControlName="dataFundacao" class="form-control" style="float:none" placeholder="Selecione uma data" ngx-mydatepicker [options]="dpOptions" #dp="ngx-mydatepicker" />
+            <span class="input-group-append">
+              <button type="button" class="btn btn-secondary grow" (click)="dp.clearDate()">
+                  <i class="fa fa-trash"></i>
+              </button>
+              <button type="button" class="btn btn-secondary grow" (click)="dp.toggleCalendar()">
+                  <i class="fa fa-calendar"></i>
+              </button>
+          </span>
+          </div>
         </div>
       </div>
     </div>

@@ -1,7 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { SharedModule } from '../../shared/shared.module';
+import { SharedModule } from '@shared/shared.module';
+import { NgxMyDatePickerModule } from 'ngx-mydatepicker';
+
 import { EmpresaFormComponent } from './empresa-form.component';
 import { EmpresaListComponent } from './empresa-list.component';
 import { EmpresaService } from './empresa.service';
@@ -11,6 +13,7 @@ import { EmpresaService } from './empresa.service';
         CommonModule,
         SharedModule,
         ReactiveFormsModule,
+        NgxMyDatePickerModule.forRoot(),
     ],
     exports: [],
     declarations: [

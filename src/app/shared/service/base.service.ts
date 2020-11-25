@@ -1,41 +1,35 @@
 import { Observable } from 'rxjs/Observable';
-import { of } from 'rxjs/observable/of';
-import { tap } from 'rxjs/operators';
-/**
- * Simulando comunicação com a API
- */
-export abstract class BaseService<T> {
-    private _lista: T[] = [];
 
-    constructor(lista: T[]) {
-        this._lista = lista;
+import {HttpClient} from '@angular/common/http';
+import { environment } from 'environments/environment';
+
+export abstract class BaseService<T> {
+
+    constructor(protected http: HttpClient, protected endpoint: string) {
+    }
+
+    protected getUrl(): string {
+        return `${environment.api_url}${this.endpoint}`;
     }
 
     findAll(): Observable<T[]> {
-        return of(this._lista);
+        return this.http.get<T[]>(`${this.getUrl()}`);
     }
 
     findById(id: number): Observable<T> {
-        const item = this._lista.find(v => v['id'] === id);
-        return of(item);
+        return this.http.get<T>(`${this.getUrl()}/${id}`);
     }
 
     save(model: T): Observable<T> {
         const id = model['id'];
         if (id) {
-            const index = this._lista.findIndex(v => v['id'] === id);
-            this._lista[index] = model;
-        } else {
-            const lastId = this._lista.length > 0 ? this._lista[this._lista.length - 1]['id'] : 0;
-            model['id'] = lastId + 1;
-            this._lista.push(model);
+            return this.http.put<T>(`${this.getUrl()}/${id}`, model);
         }
-
-        return of(model);
+        return this.http.post<T>(this.getUrl(), model);
+        // return of(model);
     }
 
     deleteById(id: number): Observable<void> {
-        const index = this._lista.findIndex(v => v['id'] === id);
-        return of(null).pipe(tap(() => this._lista.splice(index, 1)));
+        return this.http.delete<void>(`${this.getUrl()}/${id}`);
     }
 }

@@ -15,6 +15,10 @@ export class EmpresaFormComponent extends CrudFormComponent<Empresa> implements 
     constructor(protected service: EmpresaService,
         protected injector: Injector) {
         super(service, injector, 'empresa');
+        }
+
+    clearDate(): void {
+        this.formGroup.patchValue({ dataContratacao: null });
     }
 
     initForm(): void {
@@ -22,7 +26,7 @@ export class EmpresaFormComponent extends CrudFormComponent<Empresa> implements 
             id: [''],
             nome: ['', Validators.required],
             cnpj: ['', Validators.required],
-            dataFundacao: ['', Validators.required],
+            dataFundacao: [new Date(), Validators.required],
         });
     }
 }
