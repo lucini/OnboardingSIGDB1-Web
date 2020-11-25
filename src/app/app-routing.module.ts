@@ -1,14 +1,14 @@
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-
-import { NgModule } from '@angular/core';
-import { HomeComponent } from './page/home/home.component';
-import { CargoListComponent } from './page/cargo/cargo-list.component';
 import { CargoFormComponent } from './page/cargo/cargo-form.component';
-import { EmpresaListComponent } from './page/empresa/empresa-list.component';
+import { CargoListComponent } from './page/cargo/cargo-list.component';
 import { EmpresaFormComponent } from './page/empresa/empresa-form.component';
-import { FuncionarioListComponent } from './page/funcionario/funcionario-list.component';
+import { EmpresaListComponent } from './page/empresa/empresa-list.component';
+import { FuncionarioEmpresaFormComponent } from './page/funcionario/funcionario-empresa-form.component';
 import { FuncionarioFormComponent } from './page/funcionario/funcionario-form.component';
+import { FuncionarioListComponent } from './page/funcionario/funcionario-list.component';
+import { HomeComponent } from './page/home/home.component';
 
 const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -28,6 +28,7 @@ const routes: Routes = [
             { path: ':id', component: FuncionarioFormComponent },
         ],
     },
+    { path: 'funcionario-empresa', component: FuncionarioEmpresaFormComponent, data: { animation: 'fadeInOut' } },
     { path: 'cargo', component: CargoListComponent, data: { animation: 'fadeInOut' } },
     {
         path: 'cargo/form',

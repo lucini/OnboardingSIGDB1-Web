@@ -10,7 +10,6 @@ import { EmpresaModule } from './page/empresa/empresa.module';
 import { FuncionarioModule } from './page/funcionario/funcionario.module';
 import { HomeComponent } from './page/home/home.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +24,6 @@ import { HomeComponent } from './page/home/home.component';
     EmpresaModule,
     FuncionarioModule,
   ],
-  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule { }

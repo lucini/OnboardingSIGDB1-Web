@@ -24,12 +24,23 @@
       </div>
       <div class="col-6 col-md-3">
         <div class="form-group">
-          <label for="empresas">Empresas</label>
+          <label for="dataContratacao">Data de Contratação</label>
+          <div class="input-group">
+            <input formControlName="dataContratacao" class="form-control" style="float:none" placeholder="Selecione uma data" ngx-mydatepicker [options]="dpOptions" #dp="ngx-mydatepicker" />
+            <span class="input-group-append">
+              <button type="button" class="btn btn-secondary grow" (click)="dp.clearDate()">
+                  <i class="fa fa-trash"></i>
+              </button>
+              <button type="button" class="btn btn-secondary grow" (click)="dp.toggleCalendar()">
+                  <i class="fa fa-calendar"></i>
+              </button>
+          </span>
+          </div>
         </div>
       </div>
     </div>
-    <div class="text-right">
-      <button [disabled]="!formGroup.valid" type="submit" class="btn btn-primary grow">Salvar</button>
+    <div class="text-right ">
+      <button [disabled]="!formGroup.valid " type="submit " class="btn btn-primary grow ">Salvar</button>
     </div>
   </form>
 </app-card>
