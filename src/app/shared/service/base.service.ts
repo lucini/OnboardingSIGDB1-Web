@@ -1,7 +1,8 @@
 import { Observable } from 'rxjs/Observable';
 
-import {HttpClient} from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { environment } from 'environments/environment';
+import { of } from 'rxjs/observable/of';
 
 export abstract class BaseService<T> {
 
@@ -20,13 +21,18 @@ export abstract class BaseService<T> {
         return this.http.get<T>(`${this.getUrl()}/${id}`);
     }
 
+    search(): Observable<T[]> {
+        return of([]);
+    }
+
     save(model: T): Observable<T> {
         const id = model['id'];
         if (id) {
             return this.http.put<T>(`${this.getUrl()}/${id}`, model);
         }
+        // Não mandar o id pro backend
+        delete model['id'];
         return this.http.post<T>(this.getUrl(), model);
-        // return of(model);
     }
 
     deleteById(id: number): Observable<void> {

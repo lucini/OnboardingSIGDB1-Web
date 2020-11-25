@@ -20,7 +20,7 @@ export class CargoFormComponent extends CrudFormComponent<Cargo> {
 
     initForm(): void {
         this.formGroup = this.fb.group({
-            id: [''],
+            id: [null],
             descricao: ['', Validators.required],
         });
     }
