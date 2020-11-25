@@ -26,7 +26,9 @@ export class FuncionarioFormComponent extends CrudFormComponent<Funcionario> imp
             id: [null],
             nome: ['', Validators.required],
             cpf: ['', Validators.required],
-            dataContratacao: [new Date()],
+            dataContratacao: [''],
+            empresaId: [null],
+            cargoId: [null],
         });
     }
 }
