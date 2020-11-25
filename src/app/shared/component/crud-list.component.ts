@@ -12,7 +12,7 @@ export abstract class CrudListComponent<T> implements OnInit {
 
     constructor(protected service: BaseService<T>,
         protected injector: Injector,
-        protected endpoint = '') {
+        protected route = '') {
         this.router = this.injector.get(Router);
     }
 
@@ -52,10 +52,10 @@ export abstract class CrudListComponent<T> implements OnInit {
     }
 
     novo(): void {
-        this.router.navigate([`/${this.endpoint}/form`]);
+        this.router.navigate([`/${this.route}/form`]);
     }
 
     editar(id: number): void {
-        this.router.navigate([`/${this.endpoint}/form`, id]);
+        this.router.navigate([`/${this.route}/form`, id]);
     }
 }
