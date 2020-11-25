@@ -27,6 +27,7 @@
     "font-awesome": "^4.7.0",
     "jquery": "^3.5.1",
     "js-brasil": "^2.3.8",
+    "ngx-mydatepicker": "^2.4.11",
     "popper.js": "^1.16.1",
     "rxjs": "^5.5.6",
     "sweetalert2": "^10.10.1",
