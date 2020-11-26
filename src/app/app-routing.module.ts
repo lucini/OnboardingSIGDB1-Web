@@ -16,16 +16,16 @@ const routes: Routes = [
     {
         path: 'empresa/form',
         children: [
-            { path: '', component: EmpresaFormComponent },
-            { path: ':id', component: EmpresaFormComponent },
+            { path: '', component: EmpresaFormComponent, data: { animation: 'fadeInOut' } },
+            { path: ':id', component: EmpresaFormComponent, data: { animation: 'fadeInOut' } },
         ],
     },
     { path: 'funcionario', component: FuncionarioListComponent, data: { animation: 'fadeInOut' } },
     {
         path: 'funcionario/form',
         children: [
-            { path: '', component: FuncionarioFormComponent },
-            { path: ':id', component: FuncionarioFormComponent },
+            { path: '', component: FuncionarioFormComponent, data: { animation: 'fadeInOut' } },
+            { path: ':id', component: FuncionarioFormComponent, data: { animation: 'fadeInOut' } },
         ],
     },
     { path: 'funcionario-empresa', component: FuncionarioEmpresaFormComponent, data: { animation: 'fadeInOut' } },
@@ -33,8 +33,8 @@ const routes: Routes = [
     {
         path: 'cargo/form',
         children: [
-            { path: '', component: CargoFormComponent },
-            { path: ':id', component: CargoFormComponent },
+            { path: '', component: CargoFormComponent, data: { animation: 'fadeInOut' } },
+            { path: ':id', component: CargoFormComponent, data: { animation: 'fadeInOut' } },
         ],
     },
     { path: '**', redirectTo: '' },

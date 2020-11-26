@@ -3,6 +3,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 
 import { CardComponent } from './component/card/card.component';
+import { FilterComponent } from './component/filter/filter.component';
 import { FormFeedbackComponent } from './component/form-feedback/form-feedback.component';
 import { CnpjPipe } from './pipe/cnpj.pipe';
 import { CpfPipe } from './pipe/cpf.pipe';
@@ -17,6 +18,7 @@ import { ExplodePipe } from './pipe/explode.pipe';
     exports: [
         HttpClientModule,
         CardComponent,
+        FilterComponent,
         FormFeedbackComponent,
         CpfPipe,
         CnpjPipe,
@@ -24,6 +26,7 @@ import { ExplodePipe } from './pipe/explode.pipe';
     ],
     declarations: [
         CardComponent,
+        FilterComponent,
         FormFeedbackComponent,
         CpfPipe,
         CnpjPipe,

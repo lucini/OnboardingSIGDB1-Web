@@ -1,3 +1,4 @@
+import { EmpresaFiltro } from './../../shared/model/empresa-filtro';
 import { Component, Injector } from '@angular/core';
 import { CrudListComponent } from '@shared/component/crud-list.component';
 import { Empresa } from '@shared/model/empresa';
@@ -9,7 +10,7 @@ import { EmpresaService } from './empresa.service';
     templateUrl: 'empresa-list.component.html',
 })
 
-export class EmpresaListComponent extends CrudListComponent<Empresa>  {
+export class EmpresaListComponent extends CrudListComponent<Empresa, EmpresaFiltro>  {
 
     constructor(protected service: EmpresaService,
         protected injector: Injector) {

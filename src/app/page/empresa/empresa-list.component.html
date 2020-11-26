@@ -14,11 +14,11 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of list; trackBy:trackById">
+      <tr *ngFor="let item of result.lista; trackBy:trackById">
         <td scope="row">{{item?.id}}</td>
         <td>{{item?.nome}}</td>
         <td>{{item?.cnpj | cnpj}}</td>
-        <td>{{item?.dataFundacao }}</td>
+        <td>{{item?.dataFundacao}}</td>
         <td class="text-center">
           <button (click)="editar(item?.id)" title="Editar" type="button" class="btn btn-outline-primary rounded-pill grow">
             <i class="fa fa-edit"></i>

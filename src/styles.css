@@ -8,3 +8,7 @@
 .grow:hover {
   transform: scale(1.1);
 }
+
+.shadow {
+  box-shadow: 9px -8px 49px -18px rgba(0, 0, 0, 0.64);
+}

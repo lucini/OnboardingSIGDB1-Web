@@ -1,11 +1,8 @@
-import { CpfPipe } from './../pipe/cpf.pipe';
-import { Observable } from 'rxjs/Observable';
-
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'environments/environment';
-import { of } from 'rxjs/observable/of';
-import { map, tap } from 'rxjs/operators';
-import { DateHelper } from '../helper/date.helper';
+import { Observable } from 'rxjs/Observable';
+
+import { Result } from './../model/result';
 
 export abstract class BaseService<T> {
 
@@ -24,12 +21,14 @@ export abstract class BaseService<T> {
         return this.http.get<T>(`${this.getUrl()}/${id}`);
     }
 
-    search(): Observable<T[]> {
-        return of([]);
+    findAllWithFilter(filter?: any): Observable<Result<T>> {
+        filter['nome'] = 'Teste';
+        const query = this.mountQuery(filter);
+        return this.http.get<Result<T>>(`${this.getUrl()}/pesquisar${query}`);
     }
 
     save(model: T): Observable<T> {
-        this.prepareToSave(model);
+        this.prepareToSend(model);
         const id = model['id'];
         // Se ouver id é atualizacao, mandamos um PUT
         if (id) {
@@ -44,7 +43,24 @@ export abstract class BaseService<T> {
         return this.http.delete<void>(`${this.getUrl()}/${id}`);
     }
 
-    private prepareToSave(model: T): void {
+    private mountQuery(filter: any): string {
+        this.prepareToSend(filter);
+
+        let query = '';
+
+        Object.keys(filter).forEach((key, index) => {
+            const parameter = `${key}=${filter[key]}`;
+            if (index === 0) {
+                query = `?` + parameter;
+            } else {
+                query = query + '&' + parameter;
+            }
+        });
+
+        return query;
+    }
+
+    private prepareToSend(model: T): void {
         Object.keys(model).forEach(key => {
             // Mandar data string pra api
             if (model[key] && model[key]['formatted']) {
@@ -52,7 +68,7 @@ export abstract class BaseService<T> {
             }
 
             // Não manda os null para API
-            if (model[key] === null) {
+            if (model[key] === null || model[key] === '') {
                 delete model[key];
             }
         });

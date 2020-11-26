@@ -1,12 +1,15 @@
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Injector, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 import { MenuItem } from '../model/menu-item';
+import { Result } from '../model/result';
 import { BaseService } from '../service/base.service';
 
-export abstract class CrudListComponent<T> implements OnInit {
-    list: T[];
+export abstract class CrudListComponent<T, Y> implements OnInit {
+    result: Result<T>;
+    filter: Y;
     actions: MenuItem[] = [];
     protected router: Router;
 
@@ -17,13 +20,11 @@ export abstract class CrudListComponent<T> implements OnInit {
     }
 
     ngOnInit(): void {
-        this.loadList();
+        this.filterList();
     }
 
-    loadList(): void {
-        this.service.findAll().subscribe(v => {
-            this.list = v;
-        });
+    filterList(): void {
+        this.service.findAllWithFilter(this.filter).subscribe(v => this.result = v);
     }
 
     remover(id: number): void {
@@ -36,7 +37,13 @@ export abstract class CrudListComponent<T> implements OnInit {
         }).then(isConfirm => {
             if (isConfirm) {
                 this.service.deleteById(id).subscribe(() => {
-                    Swal.fire('Ok', 'Excluído com sucesso', 'success');
+                    Swal.fire('Ok', 'Excluído com sucesso', 'success').then(() => {
+                        const index = this.result.lista.findIndex(val => val['id'] === id);
+                        if (index > -1) {
+                            this.result.lista.splice(index, 1);
+                            this.result.total--;
+                        }
+                    });
                 });
             }
         });
