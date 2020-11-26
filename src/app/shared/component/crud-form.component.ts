@@ -45,7 +45,6 @@ export abstract class CrudFormComponent<T> implements OnInit {
     }
 
     abstract initForm(): void;
-    abstract postEdit(): void;
 
 
     voltar(): void {
@@ -59,6 +58,10 @@ export abstract class CrudFormComponent<T> implements OnInit {
     postSave(): void {
 
     }
+
+    postEdit(): void {
+
+    };
 
     save(): void {
         this.service.save(this.formGroup.value)

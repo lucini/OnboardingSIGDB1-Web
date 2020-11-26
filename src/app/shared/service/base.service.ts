@@ -46,7 +46,6 @@ export abstract class BaseService<T> {
 
     private prepareToSave(model: T): void {
         Object.keys(model).forEach(key => {
-
             // Mandar data string pra api
             if (model[key] && model[key]['formatted']) {
                 model[key] = model[key]['formatted'];
@@ -56,7 +55,6 @@ export abstract class BaseService<T> {
             if (model[key] === null) {
                 delete model[key];
             }
-
         });
     }
 }
