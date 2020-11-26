@@ -3,8 +3,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { tap } from 'rxjs/operators';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
-import { DATE_PICKER_OPTION } from '../constant/constant';
 
+import { DATE_PICKER_OPTION } from '../constant/constant';
 import { BaseService } from '../service/base.service';
 
 export abstract class CrudFormComponent<T> implements OnInit {
@@ -15,7 +15,7 @@ export abstract class CrudFormComponent<T> implements OnInit {
     protected router: Router;
     protected fb: FormBuilder;
 
-    constructor(protected service: BaseService<T>, protected injector: Injector, protected endpoint = '') {
+    constructor(protected service: BaseService<T>, protected injector: Injector, protected route = '') {
         this.activatedRoute = this.injector.get(ActivatedRoute);
         this.router = this.injector.get(Router);
         this.fb = this.injector.get(FormBuilder);
@@ -45,7 +45,7 @@ export abstract class CrudFormComponent<T> implements OnInit {
     abstract initForm(): void;
 
     voltar(): void {
-        this.router.navigate([`/${this.endpoint}`]);
+        this.router.navigate([`/${this.route}`]);
     }
 
     preSave(): void {
@@ -76,5 +76,9 @@ export abstract class CrudFormComponent<T> implements OnInit {
                 },
             },
         });
+    }
+
+    clearDate(field: string): void {
+        this.formGroup.patchValue({ field: null });
     }
 }

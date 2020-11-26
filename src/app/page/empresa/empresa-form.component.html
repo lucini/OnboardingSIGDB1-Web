@@ -26,9 +26,9 @@
         <div class="form-group">
           <label for="dataFundacao">Data de Fundação</label>
           <div class="input-group">
-            <input formControlName="dataFundacao" class="form-control" style="float:none" placeholder="Selecione uma data" ngx-mydatepicker [options]="dpOptions" #dp="ngx-mydatepicker" />
+            <input formControlName="dataFundacao" name="dataFundacao" class="form-control" style="float:none" placeholder="Selecione uma data" ngx-mydatepicker [options]="dpOptions" #dp="ngx-mydatepicker" />
             <span class="input-group-append">
-              <button type="button" class="btn btn-secondary grow" (click)="dp.clearDate()">
+              <button type="button" class="btn btn-secondary grow" (click)="dp.clearDate('dataFundacao')">
                   <i class="fa fa-trash"></i>
               </button>
               <button type="button" class="btn btn-secondary grow" (click)="dp.toggleCalendar()">

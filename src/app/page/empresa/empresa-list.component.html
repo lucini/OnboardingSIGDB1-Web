@@ -18,7 +18,7 @@
         <td scope="row">{{item?.id}}</td>
         <td>{{item?.nome}}</td>
         <td>{{item?.cnpj | cnpj}}</td>
-        <td>{{item?.dataFundacao | date: 'dd/MM/yyyy'}}</td>
+        <td>{{item?.dataFundacao }}</td>
         <td class="text-center">
           <button (click)="editar(item?.id)" title="Editar" type="button" class="btn btn-outline-primary rounded-pill grow">
             <i class="fa fa-edit"></i>

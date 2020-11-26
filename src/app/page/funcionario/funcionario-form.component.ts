@@ -12,10 +12,6 @@ import { FuncionarioService } from './funcionario.service';
 
 export class FuncionarioFormComponent extends CrudFormComponent<Funcionario> implements OnInit {
 
-    clearDate(): void {
-        this.formGroup.patchValue({ dataContratacao: null });
-    }
-
     constructor(protected service: FuncionarioService,
         protected injector: Injector) {
         super(service, injector, 'funcionario');
@@ -26,7 +22,7 @@ export class FuncionarioFormComponent extends CrudFormComponent<Funcionario> imp
             id: [null],
             nome: ['', Validators.required],
             cpf: ['', Validators.required],
-            dataContratacao: [''],
+            dataContratacao: [null],
             empresaId: [null],
             cargoId: [null],
         });
