@@ -29,7 +29,7 @@ export abstract class BaseService<T> {
     }
 
     save(model: T): Observable<T> {
-        this.prepare(model);
+        this.prepareToSave(model);
         const id = model['id'];
         // Se ouver id é atualizacao, mandamos um PUT
         if (id) {
@@ -44,11 +44,11 @@ export abstract class BaseService<T> {
         return this.http.delete<void>(`${this.getUrl()}/${id}`);
     }
 
-    private prepare(model: T): void {
+    private prepareToSave(model: T): void {
         Object.keys(model).forEach(key => {
 
             // Mandar data string pra api
-            if (model[key]['formatted']) {
+            if (model[key] && model[key]['formatted']) {
                 model[key] = model[key]['formatted'];
             }
 
