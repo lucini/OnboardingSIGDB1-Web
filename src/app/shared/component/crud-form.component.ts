@@ -61,7 +61,7 @@ export abstract class CrudFormComponent<T> implements OnInit {
 
     postEdit(): void {
 
-    };
+    }
 
     save(): void {
         this.service.save(this.formGroup.value)

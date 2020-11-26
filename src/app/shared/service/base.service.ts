@@ -1,4 +1,5 @@
 import { HttpClient } from '@angular/common/http';
+import { DateHelper } from '@app/shared/helper/date.helper';
 import { environment } from 'environments/environment';
 import { Observable } from 'rxjs/Observable';
 
@@ -22,7 +23,6 @@ export abstract class BaseService<T> {
     }
 
     findAllWithFilter(filter?: any): Observable<Result<T>> {
-        filter['nome'] = 'Teste';
         const query = this.mountQuery(filter);
         return this.http.get<Result<T>>(`${this.getUrl()}/pesquisar${query}`);
     }

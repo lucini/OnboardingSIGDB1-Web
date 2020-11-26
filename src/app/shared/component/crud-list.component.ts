@@ -3,6 +3,7 @@ import { Injector, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
 
+import { DATE_PICKER_OPTION } from '../constant/constant';
 import { MenuItem } from '../model/menu-item';
 import { Result } from '../model/result';
 import { BaseService } from '../service/base.service';
@@ -11,6 +12,7 @@ export abstract class CrudListComponent<T, Y> implements OnInit {
     result: Result<T>;
     filter: Y;
     actions: MenuItem[] = [];
+    dpOptions = DATE_PICKER_OPTION;
     protected router: Router;
 
     constructor(protected service: BaseService<T>,

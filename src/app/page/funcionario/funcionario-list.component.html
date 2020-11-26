@@ -1,11 +1,49 @@
 <app-card title="Funcionários" subTitle="Listagem">
   <div class="actions mb-2"><button type="button" (click)="novo()" class="btn btn-primary grow">Novo</button></div>
   <div class="filter">
-    <app-filter (onFilter)="filterList()">
-      <div class="col">
+    <app-filter (filter)="filterList()">
+      <div class="col-6">
         <div class="form-group">
           <label for="nome">Nome</label>
           <input maxlength="250" [(ngModel)]="filter.nome" class="form-control" id="nome" aria-describedby="nome">
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="form-group">
+          <label for="cpf">CPF</label>
+          <input [(ngModel)]="filter.cpf" maxlength="14" class="form-control" id="cpf" aria-describedby="cpf">
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="form-group">
+          <label for="dataContratacaoInicial">Data de Contratação Inicial</label>
+          <div class="input-group">
+            <input [(ngModel)]="filter.dataContratacaoInicial" class="form-control" style="float:none" placeholder="Selecione uma data" ngx-mydatepicker [options]="dpOptions" #dpInicial="ngx-mydatepicker" />
+            <span class="input-group-append">
+              <button type="button" class="btn btn-secondary grow" (click)="dpInicial.clearDate('dataContratacaoInicial')">
+                  <i class="fa fa-trash"></i>
+              </button>
+              <button type="button" class="btn btn-secondary grow" (click)="dpInicial.toggleCalendar()">
+                  <i class="fa fa-calendar"></i>
+              </button>
+          </span>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="form-group">
+          <label for="dataContratacaoFinal">Data de Contratação Final</label>
+          <div class="input-group">
+            <input [(ngModel)]="filter.dataContratacaoFinal" class="form-control" style="float:none" placeholder="Selecione uma data" ngx-mydatepicker [options]="dpOptions" #dpFinal="ngx-mydatepicker" />
+            <span class="input-group-append">
+              <button type="button" class="btn btn-secondary grow" (click)="dpFinal.clearDate('dataContratacaoFinal')">
+                  <i class="fa fa-trash"></i>
+              </button>
+              <button type="button" class="btn btn-secondary grow" (click)="dpFinal.toggleCalendar()">
+                  <i class="fa fa-calendar"></i>
+              </button>
+          </span>
+          </div>
         </div>
       </div>
     </app-filter>
@@ -22,7 +60,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of result.lista; trackBy:trackById">
+      <tr *ngFor="let item of result?.lista; trackBy:trackById">
         <td scope="row">{{item?.id}}</td>
         <td>{{item?.nome}}</td>
         <td>{{item?.cpf | cpf}}</td>
@@ -43,6 +81,11 @@
               <a *ngFor="let action of actions" (click)="action?.click" class="dropdown-item" href="#">{{action?.title}}</a>
             </div>
           </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="text-center" colspan="6">
+          {{result?.total ? result.total : 0}} registro(s).
         </td>
       </tr>
     </tbody>

@@ -9,7 +9,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of result.lista; trackBy:trackById">
+      <tr *ngFor="let item of result?.lista; trackBy:trackById">
         <td scope="row">{{item?.id}}</td>
         <td>{{item?.descricao}}</td>
         <td class="text-center">
@@ -27,6 +27,11 @@
               <a *ngFor="let action of actions" (click)="action?.click" class="dropdown-item" href="#">{{action?.title}}</a>
             </div>
           </div>
+        </td>
+      </tr>
+      <tr>
+        <td class="text-center" colspan="3">
+          {{result?.total ? result.total : 0}} registro(s).
         </td>
       </tr>
     </tbody>

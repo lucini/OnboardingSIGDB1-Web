@@ -15,5 +15,6 @@ export class CargoListComponent extends CrudListComponent<Cargo, CargoFiltro> {
     constructor(protected service: CargoService,
         protected injector: Injector) {
         super(service, injector, 'cargo');
+        this.filter = new CargoFiltro;
     }
 }

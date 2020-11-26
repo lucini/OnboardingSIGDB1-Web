@@ -1,3 +1,3 @@
-export interface CargoFiltro {
+export class CargoFiltro {
     descricao?: string;
 }
