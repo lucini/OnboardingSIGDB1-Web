@@ -1,6 +1,52 @@
 <app-card title="Empresas" subTitle="Listagem">
   <div class="actions mb-2"><button type="button" (click)="novo()" class="btn btn-primary grow">Novo</button></div>
   <div class="filter">
+    <app-filter (filter)="filterList()">
+      <div class="col-6">
+        <div class="form-group">
+          <label for="nome">Nome</label>
+          <input maxlength="250" [(ngModel)]="filter.nome" class="form-control" id="nome" aria-describedby="nome">
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="form-group">
+          <label for="cnpj">CNPJ</label>
+          <input [(ngModel)]="filter.cnpj" [value]="filter.cnpj | cnpj" maxlength="18" class="form-control" id="cnpj" aria-describedby="cnpj">
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="form-group">
+          <label for="dataContratacaoInicial">Data de Fundação Inicial</label>
+          <div class="input-group">
+            <input [(ngModel)]="filter.dataFundacaoInicial" class="form-control" style="float:none" placeholder="Selecione uma data" ngx-mydatepicker [options]="dpOptions" #dpInicial="ngx-mydatepicker" />
+            <span class="input-group-append">
+              <button type="button" class="btn btn-secondary grow" (click)="dpInicial.clearDate('dataFundacaoInicial')">
+                  <i class="fa fa-trash"></i>
+              </button>
+              <button type="button" class="btn btn-secondary grow" (click)="dpInicial.toggleCalendar()">
+                  <i class="fa fa-calendar"></i>
+              </button>
+          </span>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="form-group">
+          <label for="dataFundacaoFinal">Data de Fundação Final</label>
+          <div class="input-group">
+            <input [(ngModel)]="filter.dataFundacaoFinal" class="form-control" style="float:none" placeholder="Selecione uma data" ngx-mydatepicker [options]="dpOptions" #dpFinal="ngx-mydatepicker" />
+            <span class="input-group-append">
+              <button type="button" class="btn btn-secondary grow" (click)="dpFinal.clearDate('dataFundacaoFinal')">
+                  <i class="fa fa-trash"></i>
+              </button>
+              <button type="button" class="btn btn-secondary grow" (click)="dpFinal.toggleCalendar()">
+                  <i class="fa fa-calendar"></i>
+              </button>
+          </span>
+          </div>
+        </div>
+      </div>
+    </app-filter>
   </div>
   <table class="table">
     <thead>

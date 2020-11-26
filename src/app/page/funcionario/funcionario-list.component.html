@@ -11,7 +11,7 @@
       <div class="col-6">
         <div class="form-group">
           <label for="cpf">CPF</label>
-          <input [(ngModel)]="filter.cpf" maxlength="14" class="form-control" id="cpf" aria-describedby="cpf">
+          <input [(ngModel)]="filter.cpf" [value]="filter.cpf | cpf" maxlength="14" class="form-control" id="cpf" aria-describedby="cpf">
         </div>
       </div>
       <div class="col-6">
@@ -34,12 +34,12 @@
         <div class="form-group">
           <label for="dataContratacaoFinal">Data de Contratação Final</label>
           <div class="input-group">
-            <input [(ngModel)]="filter.dataContratacaoFinal" class="form-control" style="float:none" placeholder="Selecione uma data" ngx-mydatepicker [options]="dpOptions" #dpFinal="ngx-mydatepicker" />
+            <input [(ngModel)]="filter.dataContratacaoFinal" class="form-control" style="float:none" placeholder="Selecione uma data" ngx-mydatepicker [options]="dpOptions" #dp="ngx-mydatepicker" />
             <span class="input-group-append">
-              <button type="button" class="btn btn-secondary grow" (click)="dpFinal.clearDate('dataContratacaoFinal')">
+              <button type="button" class="btn btn-secondary grow" (click)="dpInicial.clearDate('dataContratacaoFinal')">
                   <i class="fa fa-trash"></i>
               </button>
-              <button type="button" class="btn btn-secondary grow" (click)="dpFinal.toggleCalendar()">
+              <button type="button" class="btn btn-secondary grow" (click)="dpInicial.toggleCalendar()">
                   <i class="fa fa-calendar"></i>
               </button>
           </span>
