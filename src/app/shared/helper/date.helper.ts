@@ -1,12 +1,9 @@
-import { IMyDateModel } from "ngx-mydatepicker";
+import { IMyDateModel } from 'ngx-mydatepicker';
 
 export class DateHelper {
     static convertToDateJs(value: string): Date {
         if (value) {
-            const dateArray = value.split('/');
-            const day = dateArray[0];
-            const month = dateArray[1];
-            const year = dateArray[2];
+            const [day, month, year] = value.split('/');
             return new Date(`${year}}-${month}-${day}`);
         }
         return null;
