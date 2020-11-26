@@ -1,5 +1,13 @@
 <app-card title="Cargos" subTitle="Listagem">
   <div class="actions mb-2"><button type="button" (click)="novo()" class="btn btn-primary grow">Novo</button></div>
+  <app-filter (filter)="filterList()">
+    <div class="col-12">
+      <div class="form-group">
+        <label for="descricao">Descrição</label>
+        <input maxlength="250" [(ngModel)]="filter.descricao" class="form-control" id="descricao" aria-describedby="descrição">
+      </div>
+    </div>
+  </app-filter>
   <table class="table">
     <thead>
       <tr>
