@@ -1,12 +1,34 @@
+import { IMyDateModel } from "ngx-mydatepicker";
+
 export class DateHelper {
     static convertToDateJs(value: string): Date {
-        // tslint:disable-next-line: max-line-length
-        const regex = ' (?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[13-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})';
-
-        if (value.match(regex)) {
+        if (value) {
             const dateArray = value.split('/');
-            return new Date(`${dateArray[2]}-${dateArray[1]}-${dateArray[0]}`);
+            const day = dateArray[0];
+            const month = dateArray[1];
+            const year = dateArray[2];
+            return new Date(`${year}}-${month}-${day}`);
         }
         return null;
+    }
+
+    static converToDatePicker(value: string): IMyDateModel {
+        if (value) {
+            // tslint:disable-next-line: radix
+            const dateArray = value.split('/').map(val => parseInt(val));
+            const [day, month, year] = dateArray;
+            const jsdate = this.convertToDateJs(value);
+            return {
+                date: { year, month, day },
+                jsdate,
+                formatted: value,
+                epoc: null,
+            };
+        }
+        return null;
+    }
+
+    static convertToFormattedString(value: any): string {
+        return `${value['day']}}/${value['month']}/${value['year']}`;
     }
 }

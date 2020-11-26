@@ -5,6 +5,7 @@ import { tap } from 'rxjs/operators';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 import { DATE_PICKER_OPTION } from '../constant/constant';
+import { DateHelper } from '../helper/date.helper';
 import { BaseService } from '../service/base.service';
 
 export abstract class CrudFormComponent<T> implements OnInit {
@@ -29,6 +30,7 @@ export abstract class CrudFormComponent<T> implements OnInit {
                 this.service.findById(this.id).subscribe(val => {
                     if (val) {
                         this.formGroup.setValue(val);
+                        this.postEdit();
                     } else {
                         this.voltar();
                     }
@@ -43,6 +45,8 @@ export abstract class CrudFormComponent<T> implements OnInit {
     }
 
     abstract initForm(): void;
+    abstract postEdit(): void;
+
 
     voltar(): void {
         this.router.navigate([`/${this.route}`]);
@@ -63,19 +67,6 @@ export abstract class CrudFormComponent<T> implements OnInit {
                 this.postSave();
                 Swal.fire('Ok', 'Salvo com sucesso', 'success').then(() => this.voltar());
             });
-    }
-
-    setDate(): void {
-        const date = new Date();
-        this.formGroup.patchValue({
-            dataContratacao: {
-                date: {
-                    year: date.getFullYear(),
-                    month: date.getMonth() + 1,
-                    day: date.getDate(),
-                },
-            },
-        });
     }
 
     clearDate(field: string): void {

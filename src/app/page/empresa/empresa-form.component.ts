@@ -1,7 +1,9 @@
 import { Component, Injector, OnInit } from '@angular/core';
 import { Validators } from '@angular/forms';
+import { DateHelper } from '@app/shared/helper/date.helper';
 import { CrudFormComponent } from '@shared/component/crud-form.component';
 import { Empresa } from '@shared/model/empresa';
+import { IMyDateModel } from 'ngx-mydatepicker';
 
 import { EmpresaService } from './empresa.service';
 
@@ -19,10 +21,14 @@ export class EmpresaFormComponent extends CrudFormComponent<Empresa> implements 
 
     initForm(): void {
         this.formGroup = this.fb.group({
-            id: [''],
+            id: [null],
             nome: ['', Validators.required],
             cnpj: ['', Validators.required],
             dataFundacao: [null, Validators.required],
         });
+    }
+
+    postEdit(): void {
+        this.formGroup.patchValue({ dataFundacao: DateHelper.converToDatePicker(this.formGroup.controls['dataFundacao'].value) });
     }
 }

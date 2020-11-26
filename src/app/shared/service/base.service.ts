@@ -1,9 +1,11 @@
+import { CpfPipe } from './../pipe/cpf.pipe';
 import { Observable } from 'rxjs/Observable';
 
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'environments/environment';
 import { of } from 'rxjs/observable/of';
 import { map, tap } from 'rxjs/operators';
+import { DateHelper } from '../helper/date.helper';
 
 export abstract class BaseService<T> {
 
@@ -19,10 +21,7 @@ export abstract class BaseService<T> {
     }
 
     findById(id: number): Observable<T> {
-        return this.http.get<T>(`${this.getUrl()}/${id}`).pipe(tap(val => {
-            this.prepare(val);
-            console.log(val);
-        }));
+        return this.http.get<T>(`${this.getUrl()}/${id}`);
     }
 
     search(): Observable<T[]> {
@@ -52,6 +51,7 @@ export abstract class BaseService<T> {
             if (model[key]['formatted']) {
                 model[key] = model[key]['formatted'];
             }
+
             // Não manda os null para API
             if (model[key] === null) {
                 delete model[key];

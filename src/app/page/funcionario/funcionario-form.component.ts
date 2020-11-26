@@ -1,5 +1,6 @@
 import { Component, Injector, OnInit } from '@angular/core';
 import { Validators } from '@angular/forms';
+import { DateHelper } from '@app/shared/helper/date.helper';
 import { CrudFormComponent } from '@shared/component/crud-form.component';
 import { Funcionario } from '@shared/model/funcionario';
 
@@ -26,5 +27,9 @@ export class FuncionarioFormComponent extends CrudFormComponent<Funcionario> imp
             empresaId: [null],
             cargoId: [null],
         });
+    }
+
+    postEdit(): void {
+        this.formGroup.patchValue({dataContratacao: DateHelper.converToDatePicker(this.formGroup.controls['dataContratacao'].value)});
     }
 }
