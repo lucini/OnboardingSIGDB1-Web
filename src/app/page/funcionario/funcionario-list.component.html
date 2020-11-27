@@ -64,8 +64,8 @@
         <td scope="row">{{item?.id}}</td>
         <td>{{item?.nome}}</td>
         <td>{{item?.cpf | cpf}}</td>
-        <td>{{item.empresaId}}</td>
-        <td>{{item?.cargoId}}</td>
+        <td>{{item.empresa}}</td>
+        <td>{{item?.cargo}}</td>
         <td class="text-center">
           <button (click)="editar(item?.id)" title="Editar" type="button" class="btn btn-outline-primary rounded-pill grow">
             <i class="fa fa-edit"></i>
@@ -78,7 +78,7 @@
                   Mais Opções
                 </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a *ngFor="let action of actions" (click)="action?.click" [attr.data-target]="action?.modal ? '#' + action?.targetModal : null" [attr.data-toggle]="action?.modal ? 'modal' : null" (click)="action?.click" class="dropdown-item" href="#">{{action?.title}}</a>
+              <a *ngFor="let action of actions" (click)="action?.click(item)" [attr.data-target]="action?.modal ? '#' + action?.targetModal : null" [attr.data-toggle]="action?.modal ? 'modal' : null" (click)="action?.click" class="dropdown-item" href="#">{{action?.title}}</a>
             </div>
           </div>
         </td>
@@ -92,10 +92,26 @@
   </table>
 </app-card>
 
-<app-modal (saveClick)="vincularEmpresa()" modalId="vincular-empresa" title="Vincular Funcionário a uma Empresa">
-  <form [formGroup]="formVincularEmpresa">
-
-  </form>
+<app-modal (saveClick)="vincularEmpresa()" (closeClick)="resetFuncionarioEmpresaForm()" modalId="vincular-empresa" title="Vincular Funcionário a uma Empresa">
+  <div class="col-12">
+    <div class="form-group">
+      <label for="nome">Nome</label>
+      <input class="form-control" aria-describedby="nome" disabled [value]="funcionarioEmpresaForm?.funcionario?.nome">
+    </div>
+  </div>
+  <div class="col-12 d-block">
+    <div class="form-group">
+      <label>Empresa</label>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {{funcionarioEmpresaForm?.empresa ? funcionarioEmpresaForm?.empresa?.nome : '(Selecione)'}}
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a *ngFor="let empresa of empresaOptions$ | async; trackBy:trackById" class="dropdown-item" (click)="funcionarioEmpresaForm.empresa = empresa">{{empresa?.nome}}</a>
+        </div>
+      </div>
+    </div>
+  </div>
 </app-modal>
 
 <app-modal modalId="vincular-cargo" title="Vincular Funcionário a um Cargo">

@@ -3,7 +3,7 @@ export interface MenuItem {
     icon?: string;
     routerLink?: string;
     active?: boolean;
-    click?: Function;
+    click?: (x?: any) => void;
     modal?: boolean;
     targetModal?: string;
 }
