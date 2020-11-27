@@ -5,7 +5,9 @@
     </div>
     <div class="row">
       <div class="col text-right">
-        <button type="button" (click)="filterList()" class="btn btn-primary grow"><i class="fa fa-filter mr-2"></i>Filtrar</button></div>
+        <button type="button" (click)="clear.emit()" class="btn btn-secondary grow"><i class="fa fa-trash mr-2"></i>Limpar</button>
+        <button type="button" (click)="filter.emit()" class="btn btn-primary grow"><i class="fa fa-filter mr-2"></i>Filtrar</button>
+      </div>
     </div>
   </div>
 </div>

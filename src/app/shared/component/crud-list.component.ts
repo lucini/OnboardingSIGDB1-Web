@@ -1,4 +1,3 @@
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Injector, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2/dist/sweetalert2.js';
@@ -8,7 +7,7 @@ import { MenuItem } from '../model/menu-item';
 import { Result } from '../model/result';
 import { BaseService } from '../service/base.service';
 
-export abstract class CrudListComponent<T, Y> implements OnInit {
+export abstract class CrudListComponent<T, Y extends class> implements OnInit {
     result: Result<T>;
     filter: Y;
     actions: MenuItem[] = [];
@@ -22,11 +21,15 @@ export abstract class CrudListComponent<T, Y> implements OnInit {
     }
 
     ngOnInit(): void {
+        this.resetFilter();
         this.filterList();
     }
 
     filterList(): void {
         this.service.findAllWithFilter(this.filter).subscribe(v => this.result = v);
+    }
+
+    resetFilter(): void {
     }
 
     remover(id: number): void {

@@ -15,6 +15,9 @@ export class EmpresaListComponent extends CrudListComponent<Empresa, EmpresaFilt
     constructor(protected service: EmpresaService,
         protected injector: Injector) {
         super(service, injector, 'empresa');
+    }
+
+    resetFilter(): void {
         this.filter = new EmpresaFiltro();
     }
 }

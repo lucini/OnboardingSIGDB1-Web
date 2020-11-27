@@ -1,7 +1,7 @@
 <app-card title="Funcionários" subTitle="Listagem">
   <div class="actions mb-2"><button type="button" (click)="novo()" class="btn btn-primary grow"><i class="fa fa-plus mr-2"></i>Novo</button></div>
   <div class="filter">
-    <app-filter (filter)="filterList()">
+    <app-filter (filter)="filterList()" (clear)="resetFilter()">
       <div class="col-6">
         <div class="form-group">
           <label for="nome">Nome</label>
@@ -34,12 +34,12 @@
         <div class="form-group">
           <label for="dataContratacaoFinal">Data de Contratação Final</label>
           <div class="input-group">
-            <input [(ngModel)]="filter.dataContratacaoFinal" class="form-control" style="float:none" placeholder="Selecione uma data" ngx-mydatepicker [options]="dpOptions" #dp="ngx-mydatepicker" />
+            <input [(ngModel)]="filter.dataContratacaoFinal" class="form-control" style="float:none" placeholder="Selecione uma data" ngx-mydatepicker [options]="dpOptions" #dpFinal="ngx-mydatepicker" />
             <span class="input-group-append">
-              <button type="button" class="btn btn-secondary grow" (click)="dpInicial.clearDate('dataContratacaoFinal')">
+              <button type="button" class="btn btn-secondary grow" (click)="dpFinal.clearDate('dataContratacaoFinal')">
                   <i class="fa fa-trash"></i>
               </button>
-              <button type="button" class="btn btn-secondary grow" (click)="dpInicial.toggleCalendar()">
+              <button type="button" class="btn btn-secondary grow" (click)="dpFinal.toggleCalendar()">
                   <i class="fa fa-calendar"></i>
               </button>
           </span>
@@ -78,7 +78,7 @@
                   Mais Opções
                 </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a *ngFor="let action of actions" (click)="action?.click" class="dropdown-item" href="#">{{action?.title}}</a>
+              <a *ngFor="let action of actions" (click)="action?.click" [attr.data-target]="action?.modal ? '#' + action?.targetModal : null" [attr.data-toggle]="action?.modal ? 'modal' : null" (click)="action?.click" class="dropdown-item" href="#">{{action?.title}}</a>
             </div>
           </div>
         </td>
@@ -91,3 +91,12 @@
     </tbody>
   </table>
 </app-card>
+
+<app-modal (saveClick)="vincularEmpresa()" modalId="vincular-empresa" title="Vincular Funcionário a uma Empresa">
+  <form [formGroup]="formVincularEmpresa">
+
+  </form>
+</app-modal>
+
+<app-modal modalId="vincular-cargo" title="Vincular Funcionário a um Cargo">
+</app-modal>

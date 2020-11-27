@@ -1,7 +1,7 @@
 <app-card title="Empresas" subTitle="Listagem">
   <div class="actions mb-2"><button type="button" (click)="novo()" class="btn btn-primary grow"><i class="fa fa-plus mr-2"></i>Novo</button></div>
   <div class="filter">
-    <app-filter (filter)="filterList()">
+    <app-filter (filter)="filterList()" (clear)="resetFilter()">
       <div class="col-6">
         <div class="form-group">
           <label for="nome">Nome</label>

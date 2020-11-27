@@ -4,4 +4,6 @@ export interface MenuItem {
     routerLink?: string;
     active?: boolean;
     click?: Function;
+    modal?: boolean;
+    targetModal?: string;
 }
