@@ -32,7 +32,7 @@
                   Mais Opções
                 </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-              <a *ngFor="let action of actions" (click)="action?.click" class="dropdown-item" href="#">{{action?.title}}</a>
+              <a *ngFor="let action of actions" (click)="action?.click()" class="dropdown-item" href="#">{{action?.title}}</a>
             </div>
           </div>
         </td>

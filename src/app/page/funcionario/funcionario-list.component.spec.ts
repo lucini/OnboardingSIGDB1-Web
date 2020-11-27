@@ -5,7 +5,7 @@ import { FuncionarioService } from './funcionario.service';
 
 describe('FuncionarioListComponent', () => {
     let component: FuncionarioListComponent;
-    const serviceMock = new FuncionarioService();
+    const serviceMock = new FuncionarioService(null);
     let injectorMock;
 
     beforeEach(() => {
@@ -15,13 +15,13 @@ describe('FuncionarioListComponent', () => {
         };
 
 
-        component = new FuncionarioListComponent(serviceMock, injectorMock);
+        component = new FuncionarioListComponent(serviceMock, injectorMock, null, null);
     });
 
     describe('Setup Component', () => {
         describe('ngOnInit', () => {
-            it('should call findAll from service', () => {
-                const serviceSpy = jest.spyOn(serviceMock, 'findAll');
+            it('should call findAllWithFilter from service', () => {
+                const serviceSpy = jest.spyOn(serviceMock, 'findAllWithFilter');
                 component.ngOnInit();
 
                 expect(serviceSpy).toBeCalled();

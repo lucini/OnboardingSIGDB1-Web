@@ -1,9 +1,10 @@
-import { Empresa } from './empresa';
-import { Funcionario } from './funcionario';
+import { Funcionario } from '@shared/model/funcionario';
 
-export class FuncionarioEmpresa {
+import { Cargo } from './cargo';
+
+export class FuncionarioCargo {
     funcionario: Funcionario;
-    empresa: Empresa;
+    cargo: Cargo;
 
     constructor(funcionario?: Funcionario) {
         if (funcionario) {
