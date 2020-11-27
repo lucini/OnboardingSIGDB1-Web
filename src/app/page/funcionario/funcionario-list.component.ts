@@ -1,4 +1,4 @@
-import { Component, Injector } from '@angular/core';
+import { ChangeDetectorRef, Component, Injector } from '@angular/core';
 import { FuncionarioEmpresa } from '@app/shared/model/funcionario-empresa';
 import { CrudListComponent } from '@shared/component/crud-list.component';
 import { Cargo } from '@shared/model/cargo';
@@ -27,6 +27,7 @@ export class FuncionarioListComponent extends CrudListComponent<Funcionario, Fun
 
     constructor(protected service: FuncionarioService,
         protected injector: Injector,
+        private ref: ChangeDetectorRef,
         private empresaService: EmpresaService,
         private cargoService: CargoService) {
         super(service, injector, 'funcionario');
@@ -63,7 +64,9 @@ export class FuncionarioListComponent extends CrudListComponent<Funcionario, Fun
                 .vincularEmpresa(funcionario.id, empresa.id)
                 .subscribe(updated => {
                     if (updated) {
-
+                        const index = this.result.lista.findIndex(item => item.id === funcionario.id);
+                        this.result.lista[index].empresa = empresa.nome;
+                        this.ref.detectChanges();
                     }
                 });
         }
@@ -76,7 +79,9 @@ export class FuncionarioListComponent extends CrudListComponent<Funcionario, Fun
                 .vincularCargo(funcionario.id, cargo.id)
                 .subscribe(updated => {
                     if (updated) {
-
+                        const index = this.result.lista.findIndex(item => item.id === funcionario.id);
+                        this.result.lista[index].cargo = cargo.descricao;
+                        this.ref.detectChanges();
                     }
                 });
         }

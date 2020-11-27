@@ -129,7 +129,7 @@
           {{funcionarioCargoForm?.cargo ? funcionarioCargoForm?.cargo?.descricao : '(Selecione)'}}
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a *ngFor="let cargo of cargoOptions$ | async; trackBy:trackById" class="dropdown-item">{{cargo?.descricao}}</a>
+          <a *ngFor="let cargo of cargoOptions$ | async; trackBy:trackById" (click)="funcionarioCargoForm.cargo = cargo" class="dropdown-item">{{cargo?.descricao}}</a>
         </div>
       </div>
     </div>

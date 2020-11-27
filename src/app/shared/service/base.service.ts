@@ -62,7 +62,7 @@ export abstract class BaseService<T> {
 
     private prepareToSend(model: T): void {
         Object.keys(model).forEach(key => {
-            // Mandar data string pra api
+            // Mandar data string pra API
             if (model[key] && model[key]['formatted']) {
                 model[key] = model[key]['formatted'];
             }
