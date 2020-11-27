@@ -7,7 +7,7 @@ import { MenuItem } from '../model/menu-item';
 import { Result } from '../model/result';
 import { BaseService } from '../service/base.service';
 
-export abstract class CrudListComponent<T, Y extends class> implements OnInit {
+export abstract class CrudListComponent<T, Y> implements OnInit {
     result: Result<T>;
     filter: Y;
     actions: MenuItem[] = [];
