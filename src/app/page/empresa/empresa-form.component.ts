@@ -3,7 +3,7 @@ import { Validators } from '@angular/forms';
 import { DateHelper } from '@app/shared/helper/date.helper';
 import { CrudFormComponent } from '@shared/component/crud-form.component';
 import { Empresa } from '@shared/model/empresa';
-import { IMyDateModel } from 'ngx-mydatepicker';
+import { CnpjValidator } from '@shared/validator/cnpj.validator';
 
 import { EmpresaService } from './empresa.service';
 
@@ -23,7 +23,7 @@ export class EmpresaFormComponent extends CrudFormComponent<Empresa> implements 
         this.formGroup = this.fb.group({
             id: [null],
             nome: ['', Validators.required],
-            cnpj: ['', Validators.required],
+            cnpj: ['', [Validators.required, CnpjValidator]],
             dataFundacao: [null, Validators.required],
         });
     }

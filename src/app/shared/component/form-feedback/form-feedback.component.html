@@ -1,7 +1,6 @@
-<div [@fadeInOut] *ngIf="formGroup?.controls[field]?.errors?.required && isValid" class="invalid-feedback d-block">
- O campo é obrigatório.
-</div>
-
-<div [@fadeInOut] *ngIf="formGroup?.controls[field]?.errors?.maxlength && isValid" class="invalid-feedback d-block">
- O campo ultrapassou o limite máximo de caracteres.
+<div [@fadeInOut] *ngIf="isValid" class="invalid-feedback d-block">
+  <span *ngIf="formGroup?.controls[field]?.errors.required">O campo é obrigatório.</span>
+  <span *ngIf="formGroup?.controls[field]?.errors.maxlenght">O campo ultrapassou o limite máximo de caracteres.</span>
+  <span *ngIf="formGroup?.controls[field]?.errors['cpf']">CPF Inválido.</span>
+  <span *ngIf="formGroup?.controls[field]?.errors['cnpj']">CNPJ Inválido.</span>
 </div>

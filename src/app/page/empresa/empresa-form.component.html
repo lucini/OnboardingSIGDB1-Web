@@ -12,14 +12,14 @@
         <div class="form-group">
           <label for="nome">Nome</label>
           <input maxlength="150" formControlName="nome" class="form-control" id="nome" aria-describedby="nome">
-          <app-form-feedback [formGroup]="formGroup" field="nome"></app-form-feedback>
+          <app-form-feedback [isValid]="isValid('nome')" [formGroup]="formGroup" field="nome"></app-form-feedback>
         </div>
       </div>
       <div class="col-6 col-md-9">
         <div class="form-group">
           <label for="cnpj">CNPJ</label>
           <input [value]="formGroup.get('cnpj').value | cnpj" maxlength="18" formControlName="cnpj" class="form-control" id="cnpj" aria-describedby="cnpj">
-          <app-form-feedback [formGroup]="formGroup" field="cnpj"></app-form-feedback>
+          <app-form-feedback [isValid]="isValid('cnpj')" [formGroup]="formGroup" field="cnpj"></app-form-feedback>
         </div>
       </div>
       <div class="col-6 col-md-3">

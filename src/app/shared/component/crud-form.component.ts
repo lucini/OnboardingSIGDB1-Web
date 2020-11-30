@@ -40,7 +40,7 @@ export abstract class CrudFormComponent<T> implements OnInit {
         });
     }
 
-    isValid(campo): boolean {
+    isValid(campo: string): boolean {
         return this.formGroup.controls[campo].invalid &&
             (this.formGroup.controls[campo].dirty || this.formGroup.controls[campo].touched);
     }

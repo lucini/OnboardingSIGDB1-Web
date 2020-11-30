@@ -3,6 +3,7 @@ import { Validators } from '@angular/forms';
 import { DateHelper } from '@app/shared/helper/date.helper';
 import { CrudFormComponent } from '@shared/component/crud-form.component';
 import { Funcionario } from '@shared/model/funcionario';
+import { CpfValidator } from '@shared/validator/cpf.validator';
 
 import { FuncionarioService } from './funcionario.service';
 
@@ -21,8 +22,8 @@ export class FuncionarioFormComponent extends CrudFormComponent<Funcionario> imp
     initForm(): void {
         this.formGroup = this.fb.group({
             id: [null],
-            nome: ['', Validators.required],
-            cpf: ['', Validators.required],
+            nome: ['', [Validators.required]],
+            cpf: ['', [Validators.required, CpfValidator]],
             dataContratacao: [null],
             empresaId: [null],
             cargoId: [null],
