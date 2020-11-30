@@ -1,3 +1,4 @@
+import { INgxMyDpOptions, NgxMyDatePicker, NgxMyDatePickerDirective } from 'ngx-mydatepicker';
 import { ChangeDetectorRef, Component, Injector, ViewChild } from '@angular/core';
 import { FuncionarioEmpresa } from '@app/shared/model/funcionario-empresa';
 import { CrudListComponent } from '@shared/component/crud-list.component';
@@ -25,6 +26,8 @@ export class FuncionarioListComponent extends CrudListComponent<Funcionario, Fun
 
     @ViewChild('modalEmpresa') modalEmpresa: ModalComponent;
     @ViewChild('modalCargo') modalCargo: ModalComponent;
+    @ViewChild('dpInicial') dpInicial: NgxMyDatePickerDirective;
+    @ViewChild('dpFinal') dpFinal: NgxMyDatePickerDirective;
 
     funcionarioEmpresaForm = new FuncionarioEmpresa();
     funcionarioCargoForm = new FuncionarioCargo();
@@ -115,6 +118,8 @@ export class FuncionarioListComponent extends CrudListComponent<Funcionario, Fun
 
     resetFilter(): void {
         this.filter = new FuncionarioFiltro();
+        this.dpInicial.clearDate();
+        this.dpFinal.clearDate();
     }
 
     resetFuncionarioEmpresaForm(): void {

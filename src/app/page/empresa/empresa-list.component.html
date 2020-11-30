@@ -20,7 +20,7 @@
           <div class="input-group">
             <input [(ngModel)]="filter.dataFundacaoInicial" class="form-control" style="float:none" placeholder="Selecione uma data" ngx-mydatepicker [options]="dpOptions" #dpInicial="ngx-mydatepicker" />
             <span class="input-group-append">
-              <button type="button" class="btn btn-secondary grow" (click)="dpInicial.clearDate('dataFundacaoInicial')">
+              <button type="button" class="btn btn-secondary grow" (click)="dpInicial.clearDate()">
                   <i class="fa fa-trash"></i>
               </button>
               <button type="button" class="btn btn-secondary grow" (click)="dpInicial.toggleCalendar()">
@@ -36,7 +36,7 @@
           <div class="input-group">
             <input [(ngModel)]="filter.dataFundacaoFinal" class="form-control" style="float:none" placeholder="Selecione uma data" ngx-mydatepicker [options]="dpOptions" #dpFinal="ngx-mydatepicker" />
             <span class="input-group-append">
-              <button type="button" class="btn btn-secondary grow" (click)="dpFinal.clearDate('dataFundacaoFinal')">
+              <button type="button" class="btn btn-secondary grow" (click)="dpFinal.clearDate()">
                   <i class="fa fa-trash"></i>
               </button>
               <button type="button" class="btn btn-secondary grow" (click)="dpFinal.toggleCalendar()">
