@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { DateHelper } from '@app/shared/helper/date.helper';
 import { environment } from 'environments/environment';
 import { Observable } from 'rxjs/Observable';
@@ -23,8 +23,9 @@ export abstract class BaseService<T> {
     }
 
     findAllWithFilter(filter?: any): Observable<Result<T>> {
-        const query = this.mountQuery(filter);
-        return this.http.get<Result<T>>(`${this.getUrl()}/pesquisar${query}`);
+        this.prepareToSend(filter);
+        const params = new HttpParams({ fromObject: filter});
+        return this.http.get<Result<T>>(`${this.getUrl()}/pesquisar`, {params});
     }
 
     save(model: T): Observable<T> {
@@ -41,23 +42,6 @@ export abstract class BaseService<T> {
 
     deleteById(id: number): Observable<void> {
         return this.http.delete<void>(`${this.getUrl()}/${id}`);
-    }
-
-    private mountQuery(filter: any): string {
-        this.prepareToSend(filter);
-
-        let query = '';
-
-        Object.keys(filter).forEach((key, index) => {
-            const parameter = `${key}=${filter[key]}`;
-            if (index === 0) {
-                query = `?` + parameter;
-            } else {
-                query = query + '&' + parameter;
-            }
-        });
-
-        return query;
     }
 
     private prepareToSend(model: T): void {

@@ -24,7 +24,7 @@ export class EmpresaFormComponent extends CrudFormComponent<Empresa> implements 
             id: [null],
             nome: ['', Validators.required],
             cnpj: ['', [Validators.required, CnpjValidator]],
-            dataFundacao: [null, Validators.required],
+            dataFundacao: [null],
         });
     }
 
