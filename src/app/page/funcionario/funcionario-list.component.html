@@ -92,7 +92,7 @@
   </table>
 </app-card>
 
-<app-modal (saveClick)="vincularEmpresa()" (closeClick)="resetFuncionarioEmpresaForm()" modalId="vincular-empresa" title="Vincular Funcionário a uma Empresa">
+<app-modal #modalEmpresa (saveClick)="vincularEmpresa()" (closeClick)="resetFuncionarioEmpresaForm()" modalId="vincular-empresa" title="Vincular Funcionário a uma Empresa">
   <div class="col-12">
     <div class="form-group">
       <label for="nome">Nome</label>
@@ -114,7 +114,7 @@
   </div>
 </app-modal>
 
-<app-modal (saveClick)="vincularCargo()" (closeClick)="resetFuncionarioCargoForm()" modalId="vincular-cargo" title="Vincular Funcionário a um Cargo">
+<app-modal #modalCargo (saveClick)="vincularCargo()" (closeClick)="resetFuncionarioCargoForm()" modalId="vincular-cargo" title="Vincular Funcionário a um Cargo">
   <div class="col-12">
     <div class="form-group">
       <label for="nome">Nome</label>

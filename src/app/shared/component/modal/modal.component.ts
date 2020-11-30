@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 
 @Component({
     selector: 'app-modal',
@@ -12,9 +12,16 @@ export class ModalComponent implements OnInit {
     @Output() saveClick = new EventEmitter<void>();
     @Output() closeClick = new EventEmitter<void>();
 
+    @ViewChild('btnClose') btnFechar: ElementRef;
 
     constructor() { }
 
     ngOnInit(): void { }
 
+    /**
+     * Simular click no botão fechar da modal do BS.
+     */
+    close(): void {
+        this.btnFechar.nativeElement.click();
+    }
 }

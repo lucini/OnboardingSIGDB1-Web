@@ -11,7 +11,7 @@
         <ng-content></ng-content>
       </div>
       <div class="modal-footer">
-        <button type="button" (click)="closeClick.emit()" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        <button #btnClose type="button" (click)="closeClick.emit()" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
         <button type="button" (click)="saveClick.emit()" class="btn btn-primary">Salvar</button>
       </div>
     </div>

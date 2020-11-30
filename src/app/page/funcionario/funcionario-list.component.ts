@@ -1,12 +1,14 @@
-import { ChangeDetectorRef, Component, Injector } from '@angular/core';
+import { ChangeDetectorRef, Component, Injector, ViewChild } from '@angular/core';
 import { FuncionarioEmpresa } from '@app/shared/model/funcionario-empresa';
 import { CrudListComponent } from '@shared/component/crud-list.component';
+import { ModalComponent } from '@shared/component/modal/modal.component';
 import { Cargo } from '@shared/model/cargo';
 import { Empresa } from '@shared/model/empresa';
 import { Funcionario } from '@shared/model/funcionario';
 import { FuncionarioCargo } from '@shared/model/funcionario-cargo';
 import { FuncionarioFiltro } from '@shared/model/funcionario-filtro';
 import { Observable } from 'rxjs/Observable';
+import Swal from 'sweetalert2/dist/sweetalert2.js';
 
 import { EmpresaService } from '../empresa/empresa.service';
 
@@ -19,6 +21,9 @@ import { FuncionarioService } from './funcionario.service';
 })
 
 export class FuncionarioListComponent extends CrudListComponent<Funcionario, FuncionarioFiltro>  {
+
+    @ViewChild('modalEmpresa') modalEmpresa: ModalComponent;
+    @ViewChild('modalCargo') modalCargo: ModalComponent;
 
     funcionarioEmpresaForm = new FuncionarioEmpresa();
     funcionarioCargoForm = new FuncionarioCargo();
@@ -64,9 +69,13 @@ export class FuncionarioListComponent extends CrudListComponent<Funcionario, Fun
                 .vincularEmpresa(funcionario.id, empresa.id)
                 .subscribe(updated => {
                     if (updated) {
-                        const index = this.result.lista.findIndex(item => item.id === funcionario.id);
-                        this.result.lista[index].empresa = empresa.nome;
-                        this.ref.detectChanges();
+                        Swal.fire('Ok', 'Empresa vinculada com sucesso.', 'success').then(() => {
+                            // Atualizar somente lista em memória
+                            const index = this.result.lista.findIndex(item => item.id === funcionario.id);
+                            this.result.lista[index].empresa = empresa.nome;
+                            this.ref.detectChanges();
+                            this.modalEmpresa.close();
+                        });
                     }
                 });
         }
@@ -79,9 +88,13 @@ export class FuncionarioListComponent extends CrudListComponent<Funcionario, Fun
                 .vincularCargo(funcionario.id, cargo.id)
                 .subscribe(updated => {
                     if (updated) {
-                        const index = this.result.lista.findIndex(item => item.id === funcionario.id);
-                        this.result.lista[index].cargo = cargo.descricao;
-                        this.ref.detectChanges();
+                        Swal.fire('Ok', 'Cargo vinculado com sucesso.', 'success').then(() => {
+                            // Atualizar somente lista em memória
+                            const index = this.result.lista.findIndex(item => item.id === funcionario.id);
+                            this.result.lista[index].cargo = cargo.descricao;
+                            this.ref.detectChanges();
+                            this.modalCargo.close();
+                        });
                     }
                 });
         }
