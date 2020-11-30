@@ -39,11 +39,14 @@ export abstract class CrudListComponent<T, Y> implements OnInit {
 
     remover(id: number): void {
         swal.fire({
-            title: 'Você tem certeza?',
+            title: 'Você tem certeza que deseja excluir?',
             text: 'Essa operação é irreversível.',
             icon: 'warning',
-        }).then(isConfirm => {
-            if (isConfirm) {
+            showDenyButton: true,
+            denyButtonText: 'Não',
+            confirmButtonText: 'Sim',
+        }).then(action => {
+            if (action.isConfirmed) {
                 this.service.deleteById(id)
                     .subscribe(
                         () => {

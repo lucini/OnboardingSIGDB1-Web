@@ -1,6 +1,7 @@
 import { Injector, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { SigError } from '@shared/model/error';
 import { tap } from 'rxjs/operators';
 import swal from 'sweetalert2';
 
@@ -66,13 +67,23 @@ export abstract class CrudFormComponent<T> implements OnInit {
     save(): void {
         this.service.save(this.formGroup.value)
             .pipe(tap(() => this.preSave()))
-            .subscribe(() => {
-                this.postSave();
-                swal.fire('Ok', 'Salvo com sucesso', 'success').then(() => this.voltar());
-            });
+            .subscribe(
+                () => {
+                    this.postSave();
+                    swal.fire('Ok', 'Salvo com sucesso', 'success').then(() => this.voltar());
+                },
+                (error: SigError) => this.showError(error)
+            );
     }
 
     clearDate(field: string): void {
         this.formGroup.patchValue({ field: null });
+    }
+
+    showError(sigError: SigError): void {
+        const { error } = sigError;
+        const errorList = `<ul>${error.map(e => `<li>${e}</li>`)}</ul>`;
+
+        swal.fire('Atenção', errorList, 'warning');
     }
 }
