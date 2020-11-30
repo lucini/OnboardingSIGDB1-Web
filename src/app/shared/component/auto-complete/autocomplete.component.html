@@ -2,7 +2,7 @@
   <input type="text" [id]="inputId" class="form-control" list="itens" [(ngModel)]="value" (ngModelChange)="update($event)" />
   <datalist id="itens">
         <select>
-            <option class="dropdown-item" *ngFor="let item of suggestions | async">{{item[field]}}</option>
+            <option class="autocomplete-item" *ngFor="let item of suggestions | async">{{item[field]}}</option>
         </select>
     </datalist>
 </div>

@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { distinctUntilChanged, throttleTime } from 'rxjs/operators';
+import { of } from 'rxjs/observable/of';
+import { distinctUntilChanged, map, switchMap, throttleTime } from 'rxjs/operators';
 
 @Component({
     selector: 'app-autocomplete',
@@ -21,10 +22,11 @@ export class AutocompleteComponent implements OnInit {
 
 
     update(value: any): void {
-        this.suggestions
+        of(value)
         .pipe(
             throttleTime(300),
-            distinctUntilChanged()
+            distinctUntilChanged(),
+            switchMap(() => this.suggestions)
         )
         .subscribe((values: any[]) => {
             const item = values.find(i => i[this.field] === value);
