@@ -99,17 +99,10 @@
       <input class="form-control" aria-describedby="nome" disabled [value]="funcionarioEmpresaForm?.funcionario?.nome">
     </div>
   </div>
-  <div class="col-12 d-block">
+  <div class="col-12">
     <div class="form-group">
-      <label>Empresa</label>
-      <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          {{funcionarioEmpresaForm?.empresa ? funcionarioEmpresaForm?.empresa?.nome : '(Selecione)'}}
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a *ngFor="let empresa of empresaOptions$ | async; trackBy:trackById" class="dropdown-item" (click)="funcionarioEmpresaForm.empresa = empresa">{{empresa?.nome}}</a>
-        </div>
-      </div>
+      <label for="empresa">Empresa</label>
+      <app-autocomplete [suggestions]="empresaOptions$" inputId="empresa" field="nome" (valueChange)="funcionarioEmpresaForm.empresa = $event"></app-autocomplete>
     </div>
   </div>
 </app-modal>
@@ -121,17 +114,10 @@
       <input class="form-control" aria-describedby="nome" disabled [value]="funcionarioCargoForm?.funcionario?.nome">
     </div>
   </div>
-  <div class="col-12 d-block">
+  <div class="col-12">
     <div class="form-group">
-      <label>Cargo</label>
-      <div class="dropdown">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          {{funcionarioCargoForm?.cargo ? funcionarioCargoForm?.cargo?.descricao : '(Selecione)'}}
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a *ngFor="let cargo of cargoOptions$ | async; trackBy:trackById" (click)="funcionarioCargoForm.cargo = cargo" class="dropdown-item">{{cargo?.descricao}}</a>
-        </div>
-      </div>
+      <label for="cargo">Cargo</label>
+      <app-autocomplete inputId="cargo" [suggestions]="cargoOptions$" field="descricao" (valueChange)="funcionarioCargoForm.cargo = $event"></app-autocomplete>
     </div>
   </div>
 </app-modal>

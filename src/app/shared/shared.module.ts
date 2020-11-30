@@ -1,7 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
+import { AutocompleteComponent } from './component/auto-complete/autocomplete.component';
 import { CardComponent } from './component/card/card.component';
 import { FilterComponent } from './component/filter/filter.component';
 import { FormFeedbackComponent } from './component/form-feedback/form-feedback.component';
@@ -15,12 +17,14 @@ import { ExplodePipe } from './pipe/explode.pipe';
     imports: [
         CommonModule,
         HttpClientModule,
+        FormsModule,
     ],
     declarations: [
         CardComponent,
         FilterComponent,
         ModalComponent,
         FormFeedbackComponent,
+        AutocompleteComponent,
         CpfPipe,
         CnpjPipe,
         ExplodePipe,
@@ -31,6 +35,7 @@ import { ExplodePipe } from './pipe/explode.pipe';
         FilterComponent,
         ModalComponent,
         FormFeedbackComponent,
+        AutocompleteComponent,
         CpfPipe,
         CnpjPipe,
         ExplodePipe,

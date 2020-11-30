@@ -1,4 +1,3 @@
-import { INgxMyDpOptions, NgxMyDatePicker, NgxMyDatePickerDirective } from 'ngx-mydatepicker';
 import { ChangeDetectorRef, Component, Injector, ViewChild } from '@angular/core';
 import { FuncionarioEmpresa } from '@app/shared/model/funcionario-empresa';
 import { CrudListComponent } from '@shared/component/crud-list.component';
@@ -9,6 +8,7 @@ import { SigError } from '@shared/model/error';
 import { Funcionario } from '@shared/model/funcionario';
 import { FuncionarioCargo } from '@shared/model/funcionario-cargo';
 import { FuncionarioFiltro } from '@shared/model/funcionario-filtro';
+import { NgxMyDatePickerDirective } from 'ngx-mydatepicker';
 import { Observable } from 'rxjs/Observable';
 import swal from 'sweetalert2/dist/sweetalert2.min.js';
 
@@ -128,5 +128,9 @@ export class FuncionarioListComponent extends CrudListComponent<Funcionario, Fun
 
     resetFuncionarioCargoForm(): void {
         this.funcionarioEmpresaForm = new FuncionarioEmpresa();
+    }
+
+    selectCargo(event: any): void {
+        console.log(event);
     }
 }
