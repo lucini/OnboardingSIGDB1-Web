@@ -68,17 +68,21 @@ export class FuncionarioListComponent extends CrudListComponent<Funcionario, Fun
         if (funcionario && empresa) {
             this.service
                 .vincularEmpresa(funcionario.id, empresa.id)
-                .subscribe(updated => {
-                    if (updated) {
-                        swal.fire('Ok', 'Empresa vinculada com sucesso.', 'success').then(() => {
-                            // Atualizar somente lista em memória
-                            const index = this.result.lista.findIndex(item => item.id === funcionario.id);
-                            this.result.lista[index].empresa = empresa.nome;
-                            this.ref.detectChanges();
-                            this.modalEmpresa.close();
-                        });
-                    }
-                });
+                .subscribe(
+                    updated => {
+                        if (updated) {
+                            swal.fire('Ok', 'Empresa vinculada com sucesso.', 'success').then(() => {
+                                // Atualizar somente lista em memória
+                                const index = this.result.lista.findIndex(item => item.id === funcionario.id);
+                                this.result.lista[index].empresa = empresa.nome;
+                                this.ref.detectChanges();
+                                this.modalEmpresa.close();
+                                this.resetFuncionarioEmpresaForm();
+                            });
+                        }
+                    },
+                    (error: SigError) => this.showError(error)
+                );
         }
     }
 
@@ -87,17 +91,21 @@ export class FuncionarioListComponent extends CrudListComponent<Funcionario, Fun
         if (funcionario && cargo) {
             this.service
                 .vincularCargo(funcionario.id, cargo.id)
-                .subscribe(updated => {
-                    if (updated) {
-                        swal.fire('Ok', 'Cargo vinculado com sucesso.', 'success').then(() => {
-                            // Atualizar somente lista em memória
-                            const index = this.result.lista.findIndex(item => item.id === funcionario.id);
-                            this.result.lista[index].cargo = cargo.descricao;
-                            this.ref.detectChanges();
-                            this.modalCargo.close();
-                        });
-                    }
-                }, (error: SigError) => this.showError(error));
+                .subscribe(
+                    updated => {
+                        if (updated) {
+                            swal.fire('Ok', 'Cargo vinculado com sucesso.', 'success').then(() => {
+                                // Atualizar somente lista em memória
+                                const index = this.result.lista.findIndex(item => item.id === funcionario.id);
+                                this.result.lista[index].cargo = cargo.descricao;
+                                this.ref.detectChanges();
+                                this.modalCargo.close();
+                                this.resetFuncionarioCargoForm();
+                            });
+                        }
+                    },
+                    (error: SigError) => this.showError(error)
+                );
         }
     }
 

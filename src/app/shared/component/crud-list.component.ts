@@ -27,7 +27,11 @@ export abstract class CrudListComponent<T, Y> implements OnInit {
     }
 
     filterList(): void {
-        this.service.findAllWithFilter(this.filter).subscribe(v => this.result = v);
+        this.service.findAllWithFilter(this.filter)
+            .subscribe(
+                v => this.result = v,
+                (error: SigError) => this.showError(error)
+            );
     }
 
     resetFilter(): void {
@@ -40,15 +44,19 @@ export abstract class CrudListComponent<T, Y> implements OnInit {
             icon: 'warning',
         }).then(isConfirm => {
             if (isConfirm) {
-                this.service.deleteById(id).subscribe(() => {
-                    swal.fire('Ok', 'Excluído com sucesso', 'success').then(() => {
-                        const index = this.result.lista.findIndex(val => val['id'] === id);
-                        if (index > -1) {
-                            this.result.lista.splice(index, 1);
-                            this.result.total--;
-                        }
-                    });
-                });
+                this.service.deleteById(id)
+                    .subscribe(
+                        () => {
+                            swal.fire('Ok', 'Excluído com sucesso', 'success').then(() => {
+                                const index = this.result.lista.findIndex(val => val['id'] === id);
+                                if (index > -1) {
+                                    this.result.lista.splice(index, 1);
+                                    this.result.total--;
+                                }
+                            });
+                        },
+                        (error: SigError) => this.showError(error)
+                    );
             }
         });
     }
@@ -71,7 +79,7 @@ export abstract class CrudListComponent<T, Y> implements OnInit {
     }
 
     showError(sigError: SigError): void {
-        const {error} = sigError;
+        const { error } = sigError;
         const errorList = `<ul>${error.map(e => `<li>${e}</li>`)}</ul>`;
 
         swal.fire('Atenção', errorList, 'warning');
