@@ -75,9 +75,11 @@ export class FuncionarioListComponent extends CrudListComponent<Funcionario, Fun
                                 // Atualizar somente lista em memória
                                 const index = this.result.lista.findIndex(item => item.id === funcionario.id);
                                 this.result.lista[index].empresa = empresa.nome;
-                                this.ref.detectChanges();
+
                                 this.modalEmpresa.close();
                                 this.resetFuncionarioEmpresaForm();
+
+                                this.ref.detectChanges();
                             });
                         }
                     },
@@ -98,9 +100,11 @@ export class FuncionarioListComponent extends CrudListComponent<Funcionario, Fun
                                 // Atualizar somente lista em memória
                                 const index = this.result.lista.findIndex(item => item.id === funcionario.id);
                                 this.result.lista[index].cargo = cargo.descricao;
-                                this.ref.detectChanges();
+
                                 this.modalCargo.close();
                                 this.resetFuncionarioCargoForm();
+
+                                this.ref.detectChanges();
                             });
                         }
                     },
