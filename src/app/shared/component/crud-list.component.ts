@@ -1,3 +1,4 @@
+import { SigError } from '@shared/model/error';
 import { Injector, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import swal from 'sweetalert2';
@@ -67,5 +68,12 @@ export abstract class CrudListComponent<T, Y> implements OnInit {
 
     editar(id: number): void {
         this.router.navigate([`/${this.route}/form`, id]);
+    }
+
+    showError(sigError: SigError): void {
+        const {error} = sigError;
+        const errorList = `<ul>${error.map(e => `<li>${e}</li>`)}</ul>`;
+
+        swal.fire('Atenção', errorList, 'warning');
     }
 }

@@ -97,9 +97,7 @@ export class FuncionarioListComponent extends CrudListComponent<Funcionario, Fun
                             this.modalCargo.close();
                         });
                     }
-                }, (error: SigError) => {
-                    swal.fire('Atenção', error.error.join(', '), 'warning');
-                });
+                }, (error: SigError) => this.showError(error));
         }
     }
 
