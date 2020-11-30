@@ -4,11 +4,12 @@ import { CrudListComponent } from '@shared/component/crud-list.component';
 import { ModalComponent } from '@shared/component/modal/modal.component';
 import { Cargo } from '@shared/model/cargo';
 import { Empresa } from '@shared/model/empresa';
+import { SigError } from '@shared/model/error';
 import { Funcionario } from '@shared/model/funcionario';
 import { FuncionarioCargo } from '@shared/model/funcionario-cargo';
 import { FuncionarioFiltro } from '@shared/model/funcionario-filtro';
 import { Observable } from 'rxjs/Observable';
-import Swal from 'sweetalert2/dist/sweetalert2.js';
+import swal from 'sweetalert2';
 
 import { EmpresaService } from '../empresa/empresa.service';
 
@@ -69,7 +70,7 @@ export class FuncionarioListComponent extends CrudListComponent<Funcionario, Fun
                 .vincularEmpresa(funcionario.id, empresa.id)
                 .subscribe(updated => {
                     if (updated) {
-                        Swal.fire('Ok', 'Empresa vinculada com sucesso.', 'success').then(() => {
+                        swal.fire('Ok', 'Empresa vinculada com sucesso.', 'success').then(() => {
                             // Atualizar somente lista em memória
                             const index = this.result.lista.findIndex(item => item.id === funcionario.id);
                             this.result.lista[index].empresa = empresa.nome;
@@ -88,7 +89,7 @@ export class FuncionarioListComponent extends CrudListComponent<Funcionario, Fun
                 .vincularCargo(funcionario.id, cargo.id)
                 .subscribe(updated => {
                     if (updated) {
-                        Swal.fire('Ok', 'Cargo vinculado com sucesso.', 'success').then(() => {
+                        swal.fire('Ok', 'Cargo vinculado com sucesso.', 'success').then(() => {
                             // Atualizar somente lista em memória
                             const index = this.result.lista.findIndex(item => item.id === funcionario.id);
                             this.result.lista[index].cargo = cargo.descricao;
@@ -96,6 +97,8 @@ export class FuncionarioListComponent extends CrudListComponent<Funcionario, Fun
                             this.modalCargo.close();
                         });
                     }
+                }, (error: SigError) => {
+                    swal.fire('Atenção', error.error.join(', '), 'warning');
                 });
         }
     }

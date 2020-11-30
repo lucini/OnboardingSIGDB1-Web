@@ -1,6 +1,6 @@
 import { Injector, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import Swal from 'sweetalert2/dist/sweetalert2.js';
+import swal from 'sweetalert2';
 
 import { DATE_PICKER_OPTION } from '../constant/constant';
 import { MenuItem } from '../model/menu-item';
@@ -33,16 +33,14 @@ export abstract class CrudListComponent<T, Y> implements OnInit {
     }
 
     remover(id: number): void {
-        Swal.fire({
+        swal.fire({
             title: 'Você tem certeza?',
             text: 'Essa operação é irreversível.',
             icon: 'warning',
-            buttons: true,
-            dangerMode: true,
         }).then(isConfirm => {
             if (isConfirm) {
                 this.service.deleteById(id).subscribe(() => {
-                    Swal.fire('Ok', 'Excluído com sucesso', 'success').then(() => {
+                    swal.fire('Ok', 'Excluído com sucesso', 'success').then(() => {
                         const index = this.result.lista.findIndex(val => val['id'] === id);
                         if (index > -1) {
                             this.result.lista.splice(index, 1);

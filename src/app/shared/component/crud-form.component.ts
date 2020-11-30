@@ -2,10 +2,10 @@ import { Injector, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { tap } from 'rxjs/operators';
-import Swal from 'sweetalert2/dist/sweetalert2.js';
+import swal from 'sweetalert2';
+
 
 import { DATE_PICKER_OPTION } from '../constant/constant';
-import { DateHelper } from '../helper/date.helper';
 import { BaseService } from '../service/base.service';
 
 export abstract class CrudFormComponent<T> implements OnInit {
@@ -68,7 +68,7 @@ export abstract class CrudFormComponent<T> implements OnInit {
             .pipe(tap(() => this.preSave()))
             .subscribe(() => {
                 this.postSave();
-                Swal.fire('Ok', 'Salvo com sucesso', 'success').then(() => this.voltar());
+                swal.fire('Ok', 'Salvo com sucesso', 'success').then(() => this.voltar());
             });
     }
 
