@@ -9,7 +9,7 @@ import { Funcionario } from '@shared/model/funcionario';
 import { FuncionarioCargo } from '@shared/model/funcionario-cargo';
 import { FuncionarioFiltro } from '@shared/model/funcionario-filtro';
 import { Observable } from 'rxjs/Observable';
-import swal from 'sweetalert2';
+import swal from 'sweetalert2/dist/sweetalert2.min.js';
 
 import { EmpresaService } from '../empresa/empresa.service';
 

@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SigError } from '@shared/model/error';
 import { tap } from 'rxjs/operators';
-import swal from 'sweetalert2';
+import swal from 'sweetalert2/dist/sweetalert2.min.js';
 
 
 import { DATE_PICKER_OPTION } from '../constant/constant';

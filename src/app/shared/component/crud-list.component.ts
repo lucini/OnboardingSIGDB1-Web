@@ -1,12 +1,15 @@
-import { SigError } from '@shared/model/error';
 import { Injector, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import swal from 'sweetalert2';
+import { SigError } from '@shared/model/error';
+import swal from 'sweetalert2/dist/sweetalert2.min.js';
+
 
 import { DATE_PICKER_OPTION } from '../constant/constant';
 import { MenuItem } from '../model/menu-item';
 import { Result } from '../model/result';
 import { BaseService } from '../service/base.service';
+
+
 
 export abstract class CrudListComponent<T, Y> implements OnInit {
     result: Result<T>;

@@ -5,7 +5,7 @@ import { CargoService } from './cargo.service';
 
 describe('CargoListComponent', () => {
     let component: CargoListComponent;
-    const serviceMock = new CargoService();
+    const serviceMock = new CargoService(null);
     let injectorMock;
 
     beforeEach(() => {

@@ -5,7 +5,7 @@ import { EmpresaService } from './empresa.service';
 
 describe('EmpresaListComponent', () => {
     let component: EmpresaListComponent;
-    const serviceMock = new EmpresaService();
+    const serviceMock = new EmpresaService(null);
     let injectorMock;
 
     beforeEach(() => {

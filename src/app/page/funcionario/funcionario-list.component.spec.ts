@@ -15,7 +15,7 @@ describe('FuncionarioListComponent', () => {
         };
 
 
-        component = new FuncionarioListComponent(serviceMock, injectorMock, null, null);
+        component = new FuncionarioListComponent(serviceMock, injectorMock, null, null, null);
     });
 
     describe('Setup Component', () => {
