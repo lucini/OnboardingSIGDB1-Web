@@ -6,7 +6,7 @@
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item" *ngFor="let menu of menuItens">
-        <a class="nav-link grow" (click)="menu.active = true" [class.active]="menu.active" [routerLink]="menu.routerLink">
+        <a class="nav-link grow" (click)="select(menu)" [class.active]="menu.active" [routerLink]="menu.routerLink">
           <i *ngIf="menu?.icon" class="mr-2 {{menu.icon}}"></i>{{menu.title}}
         </a>
       </li>

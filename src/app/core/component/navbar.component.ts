@@ -20,4 +20,9 @@ export class NavbarComponent implements OnInit {
             { title: 'Cargos', routerLink: '/cargo', icon: 'fa fa-black-tie' },
         ];
     }
+
+    select(menu: MenuItem): void {
+        this.menuItens.forEach(m => m.active = false);
+        menu.active = true;
+    }
 }
