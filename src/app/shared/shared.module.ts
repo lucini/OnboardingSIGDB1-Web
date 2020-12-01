@@ -3,7 +3,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
-import { AutocompleteComponent } from './component/auto-complete/autocomplete.component';
+import { AutocompleteComponent } from './component/autocomplete/autocomplete.component';
 import { CardComponent } from './component/card/card.component';
 import { FilterComponent } from './component/filter/filter.component';
 import { FormFeedbackComponent } from './component/form-feedback/form-feedback.component';

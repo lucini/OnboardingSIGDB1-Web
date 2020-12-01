@@ -2,6 +2,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { DateHelper } from '@app/shared/helper/date.helper';
 import { environment } from 'environments/environment';
 import { Observable } from 'rxjs/Observable';
+import { map } from 'rxjs/operators';
 
 import { Result } from './../model/result';
 
@@ -24,8 +25,14 @@ export abstract class BaseService<T> {
 
     findAllWithFilter(filter?: any): Observable<Result<T>> {
         this.prepareToSend(filter);
-        const params = new HttpParams({ fromObject: filter});
-        return this.http.get<Result<T>>(`${this.getUrl()}/pesquisar`, {params});
+        const params = new HttpParams({ fromObject: filter });
+        return this.http.get<Result<T>>(`${this.getUrl()}/pesquisar`, { params });
+    }
+
+    complete(query?: string, field?: string): Observable<T[]> {
+        const param = {};
+        param[field] = query;
+        return this.findAllWithFilter(param).pipe(map(val => val.lista));
     }
 
     save(model: T): Observable<T> {
