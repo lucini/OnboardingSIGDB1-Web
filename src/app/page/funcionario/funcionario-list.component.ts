@@ -127,10 +127,6 @@ export class FuncionarioListComponent extends CrudListComponent<Funcionario, Fun
     }
 
     resetFuncionarioCargoForm(): void {
-        this.funcionarioEmpresaForm = new FuncionarioEmpresa();
-    }
-
-    selectCargo(event: any): void {
-        console.log(event);
+        this.funcionarioCargoForm = new FuncionarioCargo();
     }
 }

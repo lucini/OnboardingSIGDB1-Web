@@ -1,6 +1,6 @@
 <div>
-  <input type="text" [id]="inputId" class="form-control" list="itens" [(ngModel)]="value" (ngModelChange)="update($event)" />
-  <datalist id="itens">
+  <input #inputAuto type="text" [id]="inputId" class="form-control" list="dt_" [(ngModel)]="value" (ngModelChange)="update($event)" />
+  <datalist [id]="'dt_' + inputId">
         <select>
             <option class="autocomplete-item" *ngFor="let item of suggestionsArray">{{item[field]}}</option>
         </select>
