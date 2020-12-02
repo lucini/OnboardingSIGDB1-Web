@@ -37,7 +37,7 @@ describe('FuncionarioService', () => {
         expect(service).toBeTruthy();
     });
 
-    it('#vincularEmpresa should call http PUT kethod for the given route', () => {
+    it('#vincularEmpresa should call http PUT method for the given route', () => {
         service.vincularEmpresa(1, 1).subscribe(val => {
             expect(val).toBe(true);
         });
@@ -49,7 +49,7 @@ describe('FuncionarioService', () => {
         httpMock.verify();
     });
 
-    it('#vincularCargo should call http PUT kethod for the given route', () => {
+    it('#vincularCargo should call http PUT method for the given route', () => {
         service.vincularCargo(1, 1).subscribe(val => {
             expect(val).toBe(true);
         });
@@ -61,7 +61,7 @@ describe('FuncionarioService', () => {
         httpMock.verify();
     });
 
-    it('#findAll should call http GET kethod for the given route', () => {
+    it('#findAll should call http GET method for the given route', () => {
         service.findAll().subscribe(val => {
             expect(val).toBe([funcionario]);
         });
@@ -73,7 +73,7 @@ describe('FuncionarioService', () => {
         httpMock.verify();
     });
 
-    it('#findAllWithFilter should call http GET kethod for the given route', () => {
+    it('#findAllWithFilter should call http GET method for the given route', () => {
         service.findAllWithFilter({ nome: 'Fulano' }).subscribe(val => {
             expect(val).toBe({ lista: [funcionario], total: 1 });
         });
@@ -85,7 +85,7 @@ describe('FuncionarioService', () => {
         httpMock.verify();
     });
 
-    it('#findById should call http GET kethod for the given route', () => {
+    it('#findById should call http GET method for the given route', () => {
         service.findById(1).subscribe(val => {
             expect(val).toBe(funcionario);
         });
@@ -97,7 +97,7 @@ describe('FuncionarioService', () => {
         httpMock.verify();
     });
 
-    it('#save with Id should call http PUT kethod for the given route', () => {
+    it('#save with Id should call http PUT method for the given route', () => {
         service.save(funcionario).subscribe(val => {
             expect(val).toBe(funcionario);
         });
@@ -109,7 +109,7 @@ describe('FuncionarioService', () => {
         httpMock.verify();
     });
 
-    it('#save without Id should call http POST kethod for the given route', () => {
+    it('#save without Id should call http POST method for the given route', () => {
         delete funcionario.id;
         service.save(funcionario).subscribe(val => {
             expect(val).toBe(funcionario);
@@ -122,7 +122,7 @@ describe('FuncionarioService', () => {
         httpMock.verify();
     });
 
-    it('#deleteById should call http DELETE kethod for the given route', () => {
+    it('#deleteById should call http DELETE method for the given route', () => {
         service.deleteById(1).subscribe(val => {
             expect(val).toHaveBeenCalled();
         });

@@ -37,7 +37,7 @@ describe('EmpresaService', () => {
     });
 
 
-    it('#findAll should call http GET kethod for the given route', () => {
+    it('#findAll should call http GET method for the given route', () => {
         service.findAll().subscribe(val => {
             expect(val).toBe([empresa]);
         });
@@ -49,7 +49,7 @@ describe('EmpresaService', () => {
         httpMock.verify();
     });
 
-    it('#findAllWithFilter should call http GET kethod for the given route', () => {
+    it('#findAllWithFilter should call http GET method for the given route', () => {
         service.findAllWithFilter({ nome: 'Empresa' }).subscribe(val => {
             expect(val).toBe({ lista: [empresa], total: 1 });
         });
@@ -61,7 +61,7 @@ describe('EmpresaService', () => {
         httpMock.verify();
     });
 
-    it('#findById should call http GET kethod for the given route', () => {
+    it('#findById should call http GET method for the given route', () => {
         service.findById(1).subscribe(val => {
             expect(val).toBe(empresa);
         });
@@ -73,7 +73,7 @@ describe('EmpresaService', () => {
         httpMock.verify();
     });
 
-    it('#save with Id should call http PUT kethod for the given route', () => {
+    it('#save with Id should call http PUT method for the given route', () => {
         service.save(empresa).subscribe(val => {
             expect(val).toBe(empresa);
         });
@@ -85,7 +85,7 @@ describe('EmpresaService', () => {
         httpMock.verify();
     });
 
-    it('#save without Id should call http POST kethod for the given route', () => {
+    it('#save without Id should call http POST method for the given route', () => {
         delete empresa.id;
         service.save(empresa).subscribe(val => {
             expect(val).toBe(empresa);
@@ -98,7 +98,7 @@ describe('EmpresaService', () => {
         httpMock.verify();
     });
 
-    it('#deleteById should call http DELETE kethod for the given route', () => {
+    it('#deleteById should call http DELETE method for the given route', () => {
         service.deleteById(1).subscribe(val => {
             expect(val).toHaveBeenCalled();
         });
