@@ -10,10 +10,8 @@ import { EmpresaService } from './empresa.service';
 
 @NgModule({
     imports: [
-        CommonModule,
         SharedModule,
         ReactiveFormsModule,
-        FormsModule,
         NgxMyDatePickerModule.forRoot(),
     ],
     exports: [],

@@ -12,9 +12,7 @@ import { FuncionarioService } from './funcionario.service';
 
 @NgModule({
     imports: [
-        CommonModule,
         SharedModule,
-        FormsModule,
         ReactiveFormsModule,
         NgxMyDatePickerModule.forRoot(),
     ],

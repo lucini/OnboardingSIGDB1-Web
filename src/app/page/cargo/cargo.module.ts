@@ -10,10 +10,8 @@ import { CargoService } from './cargo.service';
 
 @NgModule({
     imports: [
-        CommonModule,
         SharedModule,
         ReactiveFormsModule,
-        FormsModule,
     ],
     exports: [],
     declarations: [
