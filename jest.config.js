@@ -25,5 +25,6 @@ module.exports = {
     '@env/(.*)$': '<rootDir>/src/environments/$1',
     '@core/(.*)$': '<rootDir>/src/app/core/$1',
     '@shared/(.*)$': '<rootDir>/src/app/shared/$1',
+    '@page/(.*)$': '<rootDir>/src/app/page/$1',
   }
 };

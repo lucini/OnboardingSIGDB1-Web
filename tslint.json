@@ -164,8 +164,9 @@
           { "match": "^@env", "order": 30 },
           { "match": "^@core", "order": 40 },
           { "match": "^@shared", "order": 50 },
-          { "name": "parent_dir", "match": "^[.][.]", "order": 60 },
-          { "name": "current dir", "match": "^[.]", "order": 70 },
+          { "match": "^@page", "order": 60 },
+          { "name": "parent_dir", "match": "^[.][.]", "order": 70 },
+          { "name": "current dir", "match": "^[.]", "order": 80 },
           { "match": "*", "order": 10 }
         ]
       }
