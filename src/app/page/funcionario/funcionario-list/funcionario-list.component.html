@@ -92,32 +92,5 @@
   </table>
 </app-card>
 
-<app-modal #modalEmpresa (saveClick)="vincularEmpresa()" (closeClick)="resetFuncionarioEmpresaForm()" modalId="vincular-empresa" title="Vincular Funcionário a uma Empresa">
-  <div class="col-12">
-    <div class="form-group">
-      <label for="nome">Nome</label>
-      <input class="form-control" aria-describedby="nome" disabled [value]="funcionarioEmpresaForm?.funcionario?.nome">
-    </div>
-  </div>
-  <div class="col-12">
-    <div class="form-group">
-      <label for="empresa">Empresa</label>
-      <app-autocomplete inputId="empresa" [suggestions]="empresaOptions$" field="nome" (valueChange)="funcionarioEmpresaForm.empresa = $event"></app-autocomplete>
-    </div>
-  </div>
-</app-modal>
-
-<app-modal #modalCargo (saveClick)="vincularCargo()" (closeClick)="resetFuncionarioCargoForm()" modalId="vincular-cargo" title="Vincular Funcionário a um Cargo">
-  <div class="col-12">
-    <div class="form-group">
-      <label for="nome">Nome</label>
-      <input class="form-control" aria-describedby="nome" disabled [value]="funcionarioCargoForm?.funcionario?.nome">
-    </div>
-  </div>
-  <div class="col-12">
-    <div class="form-group">
-      <label for="cargo">Cargo</label>
-      <app-autocomplete inputId="cargo" [suggestions]="cargoOptions$" field="descricao" (valueChange)="funcionarioCargoForm.cargo = $event"></app-autocomplete>
-    </div>
-  </div>
-</app-modal>
+<app-funcionario-cargo [formObject]="funcionarioCargoForm" (reset)="funcionarioCargoForm = $event" (saveVinculo)="refreshCargoList($event)"></app-funcionario-cargo>
+<app-funcinario-empresa [formObject]="funcionarioEmpresaForm" (reset)="funcionarioEmpresaForm = $event" (saveVinculo)="refreshEmpresaList($event)"></app-funcinario-empresa>

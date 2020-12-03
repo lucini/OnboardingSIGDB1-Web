@@ -6,8 +6,8 @@ import { FilterComponent } from '@shared/component/filter/filter.component';
 import { CargoListComponent } from './cargo-list.component';
 
 describe('CargoListComponent', () => {
-    let component: CargoListComponent;
-    let fixture: ComponentFixture<CargoListComponent>;
+    // let component: CargoListComponent;
+    // let fixture: ComponentFixture<CargoListComponent>;
 
     // beforeEach(() => {
     //     TestBed.configureTestingModule({

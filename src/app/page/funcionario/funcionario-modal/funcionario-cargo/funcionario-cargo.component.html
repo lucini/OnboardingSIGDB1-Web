@@ -1,0 +1,14 @@
+<app-modal #modalCargo (saveClick)="vincularCargo()" (closeClick)="resetFuncionarioCargoForm()" modalId="vincular-cargo" title="Vincular Funcionário a um Cargo">
+    <div class="col-12">
+      <div class="form-group">
+        <label for="nome">Nome</label>
+        <input class="form-control" aria-describedby="nome" disabled [value]="formObject?.funcionario?.nome">
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="form-group">
+        <label for="cargo">Cargo</label>
+        <app-autocomplete inputId="cargo" [suggestions]="cargoOptions$" field="descricao" (valueChange)="formObject.cargo = $event"></app-autocomplete>
+      </div>
+    </div>
+</app-modal>

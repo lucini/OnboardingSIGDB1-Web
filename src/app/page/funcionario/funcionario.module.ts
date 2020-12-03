@@ -6,6 +6,8 @@ import { SharedModule } from '../../shared/shared.module';
 
 import { FuncionarioFormComponent } from './funcionario-form/funcionario-form.component';
 import { FuncionarioListComponent } from './funcionario-list/funcionario-list.component';
+import { FuncionarioCargoComponent } from './funcionario-modal/funcionario-cargo/funcionario-cargo.component';
+import { FuncionarioEmpresaComponent } from './funcionario-modal/funcionario-empresa/funcionario-empresa.component';
 import { FuncionarioService } from './funcionario.service';
 
 
@@ -19,6 +21,8 @@ import { FuncionarioService } from './funcionario.service';
     declarations: [
         FuncionarioListComponent,
         FuncionarioFormComponent,
+        FuncionarioCargoComponent,
+        FuncionarioEmpresaComponent,
     ],
     providers: [FuncionarioService],
 })

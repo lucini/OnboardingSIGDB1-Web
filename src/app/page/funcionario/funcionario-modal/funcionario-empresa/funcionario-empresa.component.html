@@ -1,0 +1,14 @@
+<app-modal #modalEmpresa (saveClick)="vincularEmpresa()" (closeClick)="resetFuncionarioEmpresaForm()" modalId="vincular-empresa" title="Vincular Funcionário a uma Empresa">
+    <div class="col-12">
+      <div class="form-group">
+        <label for="nome">Nome</label>
+        <input class="form-control" aria-describedby="nome" disabled [value]="formObject?.funcionario?.nome">
+      </div>
+    </div>
+    <div class="col-12">
+      <div class="form-group">
+        <label for="empresa">Empresa</label>
+        <app-autocomplete inputId="empresa" [suggestions]="empresaOptions$" field="nome" (valueChange)="formObject.empresa = $event"></app-autocomplete>
+      </div>
+    </div>
+  </app-modal>
