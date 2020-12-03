@@ -1,11 +1,10 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { SharedModule } from '@shared/shared.module';
 import { NgxMyDatePickerModule } from 'ngx-mydatepicker';
 
-import { EmpresaFormComponent } from './empresa-form.component';
-import { EmpresaListComponent } from './empresa-list.component';
+import { EmpresaFormComponent } from './empresa-form/empresa-form.component';
+import { EmpresaListComponent } from './empresa-list/empresa-list.component';
 import { EmpresaService } from './empresa.service';
 
 @NgModule({

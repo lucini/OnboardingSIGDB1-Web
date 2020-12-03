@@ -12,10 +12,10 @@ import { NgxMyDatePickerDirective } from 'ngx-mydatepicker';
 import { Observable } from 'rxjs/Observable';
 import swal from 'sweetalert2/dist/sweetalert2.min.js';
 
-import { EmpresaService } from '../empresa/empresa.service';
+import { EmpresaService } from '../../empresa/empresa.service';
 
-import { CargoService } from './../cargo/cargo.service';
-import { FuncionarioService } from './funcionario.service';
+import { CargoService } from '../../cargo/cargo.service';
+import { FuncionarioService } from '../funcionario.service';
 
 @Component({
     selector: 'app-funcionario-list',

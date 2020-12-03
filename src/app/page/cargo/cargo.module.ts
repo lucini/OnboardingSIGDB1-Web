@@ -1,11 +1,10 @@
-import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
-import { SharedModule } from '../../shared/shared.module';
+import { SharedModule } from '@shared/shared.module';
 
-import { CargoFormComponent } from './cargo-form.component';
-import { CargoListComponent } from './cargo-list.component';
+import { CargoFormComponent } from './cargo-form/cargo-form.component';
+import { CargoListComponent } from './cargo-list/cargo-list.component';
 import { CargoService } from './cargo.service';
 
 @NgModule({

@@ -1,10 +1,10 @@
 import { Component, Injector } from '@angular/core';
 import { Validators } from '@angular/forms';
-
 import { CrudFormComponent } from '@shared/component/crud-form.component';
 import { Cargo } from '@shared/model/cargo';
 
-import { CargoService } from './cargo.service';
+import { CargoService } from './../cargo.service';
+
 
 @Component({
     selector: 'app-cargo-form',

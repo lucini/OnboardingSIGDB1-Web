@@ -4,7 +4,8 @@ import { Empresa } from '@shared/model/empresa';
 import { EmpresaFiltro } from '@shared/model/empresa-filtro';
 import { NgxMyDatePickerDirective } from 'ngx-mydatepicker';
 
-import { EmpresaService } from './empresa.service';
+import { EmpresaService } from '../empresa.service';
+
 
 @Component({
     selector: 'app-empresa-list',

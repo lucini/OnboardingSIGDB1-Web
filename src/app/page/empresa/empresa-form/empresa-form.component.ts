@@ -5,7 +5,8 @@ import { CrudFormComponent } from '@shared/component/crud-form.component';
 import { Empresa } from '@shared/model/empresa';
 import { CnpjValidator } from '@shared/validator/cnpj.validator';
 
-import { EmpresaService } from './empresa.service';
+import { EmpresaService } from '../empresa.service';
+
 
 @Component({
     selector: 'app-empresa-form',

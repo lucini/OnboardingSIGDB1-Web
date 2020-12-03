@@ -5,7 +5,8 @@ import { CrudFormComponent } from '@shared/component/crud-form.component';
 import { Funcionario } from '@shared/model/funcionario';
 import { CpfValidator } from '@shared/validator/cpf.validator';
 
-import { FuncionarioService } from './funcionario.service';
+import { FuncionarioService } from '../funcionario.service';
+
 
 @Component({
     selector: 'app-funcionario-form',
