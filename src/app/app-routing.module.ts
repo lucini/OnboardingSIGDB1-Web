@@ -5,13 +5,14 @@ import { empresaRouting } from '@page/empresa/empresa.routing';
 import { funcionarioRouting } from '@page/funcionario/funcionario.routing';
 
 import { HomeComponent } from './page/home/home.component';
+import { NotFoundComponent } from './page/not-found/not-found.component';
 
 const routes: Routes = [
     { path: '', component: HomeComponent },
     ...cargoRouting,
     ...empresaRouting,
     ...funcionarioRouting,
-    { path: '**', redirectTo: '' },
+    { path: '**', component: NotFoundComponent },
 ];
 
 @NgModule({

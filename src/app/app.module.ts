@@ -11,11 +11,13 @@ import { CargoModule } from './page/cargo/cargo.module';
 import { EmpresaModule } from './page/empresa/empresa.module';
 import { FuncionarioModule } from './page/funcionario/funcionario.module';
 import { HomeComponent } from './page/home/home.component';
+import { NotFoundComponent } from './page/not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
