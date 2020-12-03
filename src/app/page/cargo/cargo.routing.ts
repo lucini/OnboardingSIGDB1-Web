@@ -1,7 +1,9 @@
+import { Routes } from '@angular/router';
+
 import { CargoFormComponent } from './cargo-form/cargo-form.component';
 import { CargoListComponent } from './cargo-list/cargo-list.component';
 
-export const cargoRouting = [
+export const cargoRouting: Routes = [
     { path: 'cargo', component: CargoListComponent, data: { animation: 'fadeInOut' } },
     {
         path: 'cargo/form',
