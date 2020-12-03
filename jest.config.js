@@ -26,5 +26,6 @@ module.exports = {
     '@core/(.*)$': '<rootDir>/src/app/core/$1',
     '@shared/(.*)$': '<rootDir>/src/app/shared/$1',
     '@page/(.*)$': '<rootDir>/src/app/page/$1',
-  }
+  },
+  verbose: true
 };
