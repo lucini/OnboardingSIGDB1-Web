@@ -70,4 +70,8 @@ describe('CargoFormComponent', () => {
     it('Should create', () => {
         expect(component).toBeTruthy();
     });
+
+    it('#voltar should return to list', () => {
+        component.voltar();
+    });
 });
