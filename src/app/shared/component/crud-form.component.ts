@@ -76,8 +76,10 @@ export abstract class CrudFormComponent<T> implements OnInit {
             );
     }
 
-    clearDate(field: string): void {
-        this.formGroup.patchValue({ field: null });
+    clearField(...fields: string[]): void {
+        const obj = {};
+        fields.forEach(field => obj[field] = null);
+        this.formGroup.patchValue(obj);
     }
 
     showError(sigError: SigError): void {
