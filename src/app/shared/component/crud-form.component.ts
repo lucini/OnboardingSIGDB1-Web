@@ -26,8 +26,8 @@ export abstract class CrudFormComponent<T> implements OnInit {
     ngOnInit(): void {
         this.initForm();
         this.activatedRoute.paramMap.subscribe(params => {
-            this.id = +params.get('id');
-            if (this.id) {
+            if (params.has('id')) {
+                this.id = +params.get('id');
                 this.service.findById(this.id).subscribe(val => {
                     if (val) {
                         this.formGroup.setValue(val);
