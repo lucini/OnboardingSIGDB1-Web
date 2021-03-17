@@ -6,11 +6,21 @@ import { map } from 'rxjs/operators';
 
 import { Result } from './../model/result';
 
+/**
+ * Métodos e propriedades comuns entre os services.
+ */
 export abstract class BaseService<T> {
 
+    /**
+     * @ignore
+     */
     constructor(protected http: HttpClient, protected endpoint: string) {
     }
 
+    /**
+     * Retorna a url da API concatenada ao endpoint passado pelo serviço.
+     * @returns {string} URL completa.
+     */
     protected getUrl(): string {
         return `${environment.api_url}${this.endpoint}`;
     }

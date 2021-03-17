@@ -1,0 +1,1167 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>onboarding-sigdb1-web documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">onboarding-sigdb1-web documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Digite para pesquisar"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Componentes</li>
+  <li>CargoListComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>Arquivo</h3>
+</p>
+<p class="comment">
+    <code>src/app/page/cargo/cargo-list/cargo-list.component.ts</code>
+</p>
+
+
+    <p class="comment">
+        <h3>Extende</h3>
+    </p>
+    <p class="comment">
+                <code><a href="../classes/CrudListComponent.html" target="_self" >CrudListComponent</a></code>
+    </p>
+
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-cargo-list</code></td>
+            </tr>
+
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>cargo-list.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Propriedades</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#actions">actions</a>
+                            </li>
+                            <li>
+                                <a href="#dpOptions">dpOptions</a>
+                            </li>
+                            <li>
+                                <a href="#filter">filter</a>
+                            </li>
+                            <li>
+                                <a href="#result">result</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Protected</span>
+                                <a href="#router">router</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Métodos</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#resetFilter">resetFilter</a>
+                            </li>
+                            <li>
+                                <a href="#editar">editar</a>
+                            </li>
+                            <li>
+                                <a href="#filterList">filterList</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#novo">novo</a>
+                            </li>
+                            <li>
+                                <a href="#remover">remover</a>
+                            </li>
+                            <li>
+                                <a href="#resetFilter">resetFilter</a>
+                            </li>
+                            <li>
+                                <a href="#showError">showError</a>
+                            </li>
+                            <li>
+                                <a href="#trackById">trackById</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Construtor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(service: <a href="../injectables/CargoService.html">CargoService</a>, injector: <a href="https://angular.io/api/core/Injector" target="_blank">Injector</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Definido em <a href="" data-line="13" class="link-to-prism">src/app/page/cargo/cargo-list/cargo-list.component.ts:13</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parâmetros :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Nome</td>
+                                                    <td>Tipo</td>
+                                                <td>Opcional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>service</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/CargoService.html" target="_self" >CargoService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            Não
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>injector</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/core/Injector" target="_blank" >Injector</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            Não
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Métodos
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resetFilter"></a>
+                    <span class="name">
+                        <b>
+                            resetFilter
+                        </b>
+                        <a href="#resetFilter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>resetFilter()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Definido em <a href="" data-line="20"
+                            class="link-to-prism">src/app/page/cargo/cargo-list/cargo-list.component.ts:20</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Retorna : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="editar"></a>
+                    <span class="name">
+                        <b>
+                            editar
+                        </b>
+                        <a href="#editar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>editar(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Herdado de         <code><a href="../classes/CrudListComponent.html" target="_self" >CrudListComponent</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Definido em         <code><a href="../classes/CrudListComponent.html#source" target="_self" >CrudListComponent:83</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parâmetros :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nome</td>
+                                    <td>Tipo</td>
+                                    <td>Opcional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        Não
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Retorna : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filterList"></a>
+                    <span class="name">
+                        <b>
+                            filterList
+                        </b>
+                        <a href="#filterList"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>filterList()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Herdado de         <code><a href="../classes/CrudListComponent.html" target="_self" >CrudListComponent</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Definido em         <code><a href="../classes/CrudListComponent.html#source" target="_self" >CrudListComponent:32</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Retorna : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Herdado de         <code><a href="../classes/CrudListComponent.html" target="_self" >CrudListComponent</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Definido em         <code><a href="../classes/CrudListComponent.html#source" target="_self" >CrudListComponent:27</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Retorna : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="novo"></a>
+                    <span class="name">
+                        <b>
+                            novo
+                        </b>
+                        <a href="#novo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>novo()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Herdado de         <code><a href="../classes/CrudListComponent.html" target="_self" >CrudListComponent</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Definido em         <code><a href="../classes/CrudListComponent.html#source" target="_self" >CrudListComponent:79</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Retorna : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="remover"></a>
+                    <span class="name">
+                        <b>
+                            remover
+                        </b>
+                        <a href="#remover"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>remover(id: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Herdado de         <code><a href="../classes/CrudListComponent.html" target="_self" >CrudListComponent</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Definido em         <code><a href="../classes/CrudListComponent.html#source" target="_self" >CrudListComponent:43</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parâmetros :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nome</td>
+                                    <td>Tipo</td>
+                                    <td>Opcional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>id</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        Não
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Retorna : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="resetFilter"></a>
+                    <span class="name">
+                        <b>
+                            resetFilter
+                        </b>
+                        <a href="#resetFilter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>resetFilter()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Herdado de         <code><a href="../classes/CrudListComponent.html" target="_self" >CrudListComponent</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Definido em         <code><a href="../classes/CrudListComponent.html#source" target="_self" >CrudListComponent:40</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Retorna : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="showError"></a>
+                    <span class="name">
+                        <b>
+                            showError
+                        </b>
+                        <a href="#showError"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>showError(sigError: <a href="../interfaces/SigError.html">SigError</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Herdado de         <code><a href="../classes/CrudListComponent.html" target="_self" >CrudListComponent</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Definido em         <code><a href="../classes/CrudListComponent.html#source" target="_self" >CrudListComponent:87</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parâmetros :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nome</td>
+                                    <td>Tipo</td>
+                                    <td>Opcional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>sigError</td>
+                                    <td>
+                                                <code><a href="../interfaces/SigError.html" target="_self" >SigError</a></code>
+                                    </td>
+
+                                    <td>
+                                        Não
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Retorna : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="trackById"></a>
+                    <span class="name">
+                        <b>
+                            trackById
+                        </b>
+                        <a href="#trackById"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>trackById(index: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, item: T)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Herdado de         <code><a href="../classes/CrudListComponent.html" target="_self" >CrudListComponent</a></code>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-line">Definido em         <code><a href="../classes/CrudListComponent.html#source" target="_self" >CrudListComponent:75</a></code>
+</div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Para indexar as listas, ganho de performance no ngFor</p>
+</div>
+
+                    <div class="io-description">
+                        <b>Parâmetros :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Nome</td>
+                                    <td>Tipo</td>
+                                    <td>Opcional</td>
+                                    <td>Descrição</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>index</td>
+                                    <td>
+                                                <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                    </td>
+
+                                    <td>
+                                        Não
+                                    </td>
+
+
+                                    <td>
+                                        <p>index do item do array</p>
+
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>item</td>
+                                    <td>
+                                            <code>T</code>
+                                    </td>
+
+                                    <td>
+                                        Não
+                                    </td>
+
+
+                                    <td>
+                                        <p>item do array</p>
+
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Retorna : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Propriedades
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="actions"></a>
+                        <span class="name">
+                            <b>
+                            actions</b>
+                            <a href="#actions"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Tipo : </i>        <code><a href="../interfaces/MenuItem.html" target="_self" >MenuItem[]</a></code>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor padrão : </i><code>[]</code>
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Herdado de         <code><a href="../classes/CrudListComponent.html" target="_self" >CrudListComponent</a></code>
+</div>
+                                </td>
+                            </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido em         <code><a href="../classes/CrudListComponent.html#source" target="_self" >CrudListComponent:17</a></code>
+</div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="dpOptions"></a>
+                        <span class="name">
+                            <b>
+                            dpOptions</b>
+                            <a href="#dpOptions"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Valor padrão : </i><code>DATE_PICKER_OPTION</code>
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Herdado de         <code><a href="../classes/CrudListComponent.html" target="_self" >CrudListComponent</a></code>
+</div>
+                                </td>
+                            </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido em         <code><a href="../classes/CrudListComponent.html#source" target="_self" >CrudListComponent:18</a></code>
+</div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="filter"></a>
+                        <span class="name">
+                            <b>
+                            filter</b>
+                            <a href="#filter"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Tipo : </i>    <code>Y</code>
+
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Herdado de         <code><a href="../classes/CrudListComponent.html" target="_self" >CrudListComponent</a></code>
+</div>
+                                </td>
+                            </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido em         <code><a href="../classes/CrudListComponent.html#source" target="_self" >CrudListComponent:16</a></code>
+</div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="result"></a>
+                        <span class="name">
+                            <b>
+                            result</b>
+                            <a href="#result"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Tipo : </i>        <code><a href="../interfaces/Result.html" target="_self" >Result&lt;T&gt;</a></code>
+
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Herdado de         <code><a href="../classes/CrudListComponent.html" target="_self" >CrudListComponent</a></code>
+</div>
+                                </td>
+                            </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido em         <code><a href="../classes/CrudListComponent.html#source" target="_self" >CrudListComponent:15</a></code>
+</div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="router"></a>
+                        <span class="name">
+                            <b>
+                                <span class="modifier">Protected</span>
+                            router</b>
+                            <a href="#router"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Tipo : </i>        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+
+                        </td>
+                    </tr>
+                            <tr>
+                                <td class="col-md-4">
+                                    <div class="io-line">Herdado de         <code><a href="../classes/CrudListComponent.html" target="_self" >CrudListComponent</a></code>
+</div>
+                                </td>
+                            </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Definido em         <code><a href="../classes/CrudListComponent.html#source" target="_self" >CrudListComponent:19</a></code>
+</div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, Injector } from &#x27;@angular/core&#x27;;
+import { CrudListComponent } from &#x27;@shared/component/crud-list.component&#x27;;
+import { Cargo } from &#x27;@shared/model/cargo&#x27;;
+import { CargoFiltro } from &#x27;@shared/model/cargo-filtro&#x27;;
+
+import { CargoService } from &#x27;../cargo.service&#x27;;
+
+@Component({
+    selector: &#x27;app-cargo-list&#x27;,
+    templateUrl: &#x27;cargo-list.component.html&#x27;,
+})
+
+export class CargoListComponent extends CrudListComponent&lt;Cargo, CargoFiltro&gt; {
+
+    constructor(protected service: CargoService,
+        protected injector: Injector) {
+        super(service, injector, &#x27;cargo&#x27;);
+    }
+
+    resetFilter(): void {
+        this.filter &#x3D; new CargoFiltro();
+    }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;app-card title&#x3D;&quot;Cargos&quot; subTitle&#x3D;&quot;Listagem&quot;&gt;
+  &lt;div class&#x3D;&quot;actions mb-2&quot;&gt;&lt;button type&#x3D;&quot;button&quot; (click)&#x3D;&quot;novo()&quot; class&#x3D;&quot;btn btn-primary grow&quot;&gt;&lt;i class&#x3D;&quot;fa fa-plus mr-2&quot;&gt;&lt;/i&gt;Novo&lt;/button&gt;&lt;/div&gt;
+  &lt;app-filter (filter)&#x3D;&quot;filterList()&quot; (clear)&#x3D;&quot;resetFilter()&quot;&gt;
+    &lt;div class&#x3D;&quot;col-12&quot;&gt;
+      &lt;div class&#x3D;&quot;form-group&quot;&gt;
+        &lt;label for&#x3D;&quot;descricao&quot;&gt;Descrição&lt;/label&gt;
+        &lt;input maxlength&#x3D;&quot;250&quot; [(ngModel)]&#x3D;&quot;filter.descricao&quot; class&#x3D;&quot;form-control&quot; id&#x3D;&quot;descricao&quot; aria-describedby&#x3D;&quot;descrição&quot;&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/app-filter&gt;
+  &lt;table class&#x3D;&quot;table&quot;&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th scope&#x3D;&quot;col&quot;&gt;#&lt;/th&gt;
+        &lt;th scope&#x3D;&quot;col&quot;&gt;Descrição&lt;/th&gt;
+        &lt;th class&#x3D;&quot;text-center&quot; scope&#x3D;&quot;col&quot;&gt;Ações&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr *ngFor&#x3D;&quot;let item of result?.lista; trackBy:trackById&quot;&gt;
+        &lt;td scope&#x3D;&quot;row&quot;&gt;{{item?.id}}&lt;/td&gt;
+        &lt;td&gt;{{item?.descricao}}&lt;/td&gt;
+        &lt;td class&#x3D;&quot;text-center&quot;&gt;
+          &lt;button (click)&#x3D;&quot;editar(item?.id)&quot; title&#x3D;&quot;Editar&quot; type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-outline-primary rounded-pill grow&quot;&gt;
+            &lt;i class&#x3D;&quot;fa fa-edit&quot;&gt;&lt;/i&gt;
+          &lt;/button&gt;
+          &lt;button (click)&#x3D;&quot;remover(item?.id)&quot; title&#x3D;&quot;Excluir&quot; type&#x3D;&quot;button&quot; class&#x3D;&quot;btn btn-outline-danger rounded-pill grow&quot;&gt;
+            &lt;i class&#x3D;&quot;fa fa-trash&quot;&gt;&lt;/i&gt;
+          &lt;/button&gt;
+          &lt;div *ngIf&#x3D;&quot;actions?.length&quot; class&#x3D;&quot;btn-group&quot;&gt;
+            &lt;button class&#x3D;&quot;btn btn-outline-secondary dropdown-toggle&quot; type&#x3D;&quot;button&quot; id&#x3D;&quot;dropdownMenuButton&quot; data-toggle&#x3D;&quot;dropdown&quot; aria-haspopup&#x3D;&quot;true&quot; aria-expanded&#x3D;&quot;false&quot;&gt;
+                  Mais Opções
+                &lt;/button&gt;
+            &lt;div class&#x3D;&quot;dropdown-menu&quot; aria-labelledby&#x3D;&quot;dropdownMenuButton&quot;&gt;
+              &lt;a *ngFor&#x3D;&quot;let action of actions&quot; (click)&#x3D;&quot;action?.click()&quot; class&#x3D;&quot;dropdown-item&quot; href&#x3D;&quot;#&quot;&gt;{{action?.title}}&lt;/a&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+        &lt;td class&#x3D;&quot;text-center&quot; colspan&#x3D;&quot;3&quot;&gt;
+          {{result?.total ? result.total : 0}} registro(s).
+        &lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/app-card&gt;</code></pre>
+    </div>
+
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Elemento HTML</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Componente</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Elemento HTML com diretiva</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><app-card title="Cargos" subTitle="Listagem">  <div class="actions mb-2"><button type="button" (click)="novo()" class="btn btn-primary grow"><i class="fa fa-plus mr-2"></i>Novo</button></div>  <app-filter (filter)="filterList()" (clear)="resetFilter()">    <div class="col-12">      <div class="form-group">        <label for="descricao">Descrição</label>        <input maxlength="250" [(ngModel)]="filter.descricao" class="form-control" id="descricao" aria-describedby="descrição">      </div>    </div>  </app-filter>  <table class="table">    <thead>      <tr>        <th scope="col">#</th>        <th scope="col">Descrição</th>        <th class="text-center" scope="col">Ações</th>      </tr>    </thead>    <tbody>      <tr *ngFor="let item of result?.lista; trackBy:trackById">        <td scope="row">{{item?.id}}</td>        <td>{{item?.descricao}}</td>        <td class="text-center">          <button (click)="editar(item?.id)" title="Editar" type="button" class="btn btn-outline-primary rounded-pill grow">            <i class="fa fa-edit"></i>          </button>          <button (click)="remover(item?.id)" title="Excluir" type="button" class="btn btn-outline-danger rounded-pill grow">            <i class="fa fa-trash"></i>          </button>          <div *ngIf="actions?.length" class="btn-group">            <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">                  Mais Opções                </button>            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">              <a *ngFor="let action of actions" (click)="action?.click()" class="dropdown-item" href="#">{{action?.title}}</a>            </div>          </div>        </td>      </tr>      <tr>        <td class="text-center" colspan="3">          {{result?.total ? result.total : 0}} registro(s).        </td>      </tr>    </tbody>  </table></app-card></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'AutocompleteComponent', 'selector': 'app-autocomplete'},{'name': 'CardComponent', 'selector': 'app-card'},{'name': 'CargoFormComponent', 'selector': 'app-cargo-form'},{'name': 'CargoListComponent', 'selector': 'app-cargo-list'},{'name': 'EmpresaFormComponent', 'selector': 'app-empresa-form'},{'name': 'EmpresaListComponent', 'selector': 'app-empresa-list'},{'name': 'FilterComponent', 'selector': 'app-filter'},{'name': 'FormFeedbackComponent', 'selector': 'app-form-feedback'},{'name': 'FuncionarioCargoComponent', 'selector': 'app-funcionario-cargo'},{'name': 'FuncionarioEmpresaComponent', 'selector': 'app-funcinario-empresa'},{'name': 'FuncionarioFormComponent', 'selector': 'app-funcionario-form'},{'name': 'FuncionarioListComponent', 'selector': 'app-funcionario-list'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'LoaderComponent', 'selector': 'app-loader'},{'name': 'ModalComponent', 'selector': 'app-modal'},{'name': 'NavbarComponent', 'selector': 'app-navbar'},{'name': 'NotFoundComponent', 'selector': 'app-not-found'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'CargoListComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">Nenhum resultado correspondente "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'CargoListComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

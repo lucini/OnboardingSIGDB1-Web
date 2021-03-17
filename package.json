@@ -9,7 +9,8 @@
     "test": "jest --coverage",
     "test-watch": "jest --watch",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "doc": "./node_modules/.bin/compodoc -p tsconfig.json -w -s --disableRoutesGraph --language pt-BR"
   },
   "private": true,
   "dependencies": {
@@ -40,6 +41,7 @@
     "@angular/cli": "~1.7.4",
     "@angular/compiler-cli": "^5.2.0",
     "@angular/language-service": "^5.2.0",
+    "@compodoc/compodoc": "^1.1.11",
     "@types/jest": "^26.0.15",
     "@types/node": "~6.0.60",
     "codelyzer": "^4.0.1",
